@@ -1,13 +1,13 @@
-import { useState } from "react";
+import React from "react"
 
-const { VITE_APP_TITLE } = import.meta.env;
+const { VITE_APP_TITLE } = import.meta.env
 
 function App() {
   return (
-    <div className="flex h-screen">
-      <h1 className="m-auto">{VITE_APP_TITLE}</h1>
+    <div className='flex h-screen'>
+      <h1 className='m-auto'>{VITE_APP_TITLE}</h1>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
