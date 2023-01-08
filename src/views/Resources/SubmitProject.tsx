@@ -3,10 +3,12 @@ import Card from "../../components/Card"
 
 const SubmitProject: React.FC = () => {
   return (
-    <Card>
-      <h1 className='text-purple text-center font-bold uppercase'>
-        Submit Project
-      </h1>
+    <Card title='Submit Project'>
+      <p>
+        Log in to CruzHacks portal and head over to Team&gt;Submit Project.
+        Follow instructions accordingly to submit your project or click the
+        button below to be taken directly!
+      </p>
     </Card>
   )
 }

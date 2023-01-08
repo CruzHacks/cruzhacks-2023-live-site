@@ -3,10 +3,11 @@ import Card from "../../components/Card"
 
 const TeamFinder: React.FC = () => {
   return (
-    <Card>
-      <h1 className='text-purple text-center font-bold uppercase'>
-        Find a Team to Join & Submit
-      </h1>
+    <Card title='Find a Team to Join & Submit'>
+      <ol className='flex flex-col gap-5'>
+        <li>1. Join our Slack channel</li>
+        <li>2. Found your team?</li>
+      </ol>
     </Card>
   )
 }
