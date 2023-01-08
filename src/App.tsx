@@ -13,21 +13,26 @@ function App() {
   console.log(VITE_APP_TITLE)
 
   return (
-    <div className='bg-gray'>
-      <Navbar />
-      <div className='max-w-screen-md mx-auto p-10'>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route
-            path='/support/resources-and-support'
-            element={<Resources />}
-          />
-          <Route path='/support/faq-and-rules' element={<FAQ />} />
-          <Route path='/map' element={<Map />} />
-        </Routes>
+    <>
+      {/* Background Color Fix (for header images*/}
+      <div className='fixed h-screen w-screen bg-gray -z-50'></div>
+
+      <div>
+        <Navbar />
+        <div className='max-w-screen-md mx-auto p-10'>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route
+              path='/support/resources-and-support'
+              element={<Resources />}
+            />
+            <Route path='/support/faq-and-rules' element={<FAQ />} />
+            <Route path='/map' element={<Map />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
   )
 }
 

@@ -1,12 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 
 import CruzhacksLogo from "../assets/logo_cruzhacks-main-white.svg"
 
 const Navbar: React.FC = () => {
   const page = useLocation().pathname
-
-  console.log(page)
+  const showSupport = useState(false)
 
   return (
     <div className='fixed p-5 top-0 flex w-screen justify-between bg-navy text-white'>
