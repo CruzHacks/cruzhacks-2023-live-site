@@ -1,12 +1,20 @@
 import React from "react"
+import { Route, Routes } from "react-router-dom"
+import Footer from "./components/Footer"
+import Navbar from "./components/Navbar"
+import Home from "./views/Home"
 
 const { VITE_APP_TITLE } = import.meta.env
 
 function App() {
   return (
-    <div className='flex h-screen'>
-      <h1 className='m-auto'>{VITE_APP_TITLE}</h1>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
+      <Footer />
+    </>
   )
 }
 
