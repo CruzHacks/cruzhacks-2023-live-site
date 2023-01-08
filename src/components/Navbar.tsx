@@ -5,26 +5,26 @@ import CruzhacksLogo from "../assets/logo_cruzhacks-main-white.svg"
 
 const Navbar: React.FC = () => {
   const page = useLocation().pathname
-  const showSupport = useState(false)
+  // const showSupport = useState(false)
 
   return (
-    <div className='fixed p-5 top-0 flex w-screen justify-between bg-navy text-white'>
-      <div className='grow flex gap-3 items-center justify-center md:justify-start'>
-        <img className='h-9' src={CruzhacksLogo} />
+    <div className='bg-navy fixed top-0 flex w-screen justify-between p-5 text-white'>
+      <div className='flex grow items-center justify-center gap-3 md:justify-start'>
+        <img className='h-9' src={CruzhacksLogo} alt='CruzHacks Logo' />
         <h1 className='flex gap-1 text-2xl'>
-          CRUZHACKS<span className='text-xs mt-1 font-thin'>LIVE</span>
+          CRUZHACKS<span className='mt-1 text-xs font-thin'>LIVE</span>
         </h1>
       </div>
-      <div className='grow hidden md:flex justify-evenly'>
+      <div className='hidden grow justify-evenly md:flex'>
         <Link
           to='/'
-          className={page === "/" ? "border-purple border-b-2 h-7" : ""}
+          className={page === "/" ? "border-purple h-7 border-b-2" : ""}
         >
           Home
         </Link>
         <Link
           to='/map'
-          className={page === "/map" ? "border-purple border-b-2 h-7" : ""}
+          className={page === "/map" ? "border-purple h-7 border-b-2" : ""}
         >
           Map
         </Link>

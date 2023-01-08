@@ -15,11 +15,11 @@ function App() {
   return (
     <>
       {/* Background Color Fix (for header images*/}
-      <div className='fixed h-screen w-screen bg-gray -z-50'></div>
+      <div className='bg-navy fixed -z-50 h-screen w-screen'></div>
 
       <div>
         <Navbar />
-        <div className='max-w-screen-md mx-auto p-10'>
+        <div className='mx-auto max-w-screen-md p-10'>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route

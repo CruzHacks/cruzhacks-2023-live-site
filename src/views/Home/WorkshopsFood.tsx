@@ -1,12 +1,13 @@
 import React from "react"
+import Card from "../../components/Card"
 
 const WorkshopsFood: React.FC = () => {
   return (
-    <div>
-      <h1 className='uppercase text-purple text-center font-bold'>
+    <Card>
+      <h1 className='text-purple text-center font-bold uppercase'>
         Workshops / Food
       </h1>
-    </div>
+    </Card>
   )
 }
 

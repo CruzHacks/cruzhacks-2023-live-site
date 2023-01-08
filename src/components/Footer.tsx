@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
   return (
     <>
       {/* Mobile */}
-      <footer className='flex md:hidden fixed p-5 bottom-0 w-screen bg-white text-darkgray justify-evenly'>
+      <footer className='text-darkgray fixed bottom-0 flex w-screen justify-evenly bg-white p-5 md:hidden'>
         <Link to='/map'>icon map</Link>
         <Link to='/support/resources-and-support'>icon resources</Link>
         <Link to='/'>icon home</Link>
@@ -20,9 +20,9 @@ const Footer: React.FC = () => {
       </footer>
 
       {/* Desktop */}
-      <footer className='hidden md:flex p-5 px-8 justify-between bg-navy text-white'>
+      <footer className='bg-navy hidden justify-between p-5 px-8 text-white md:flex'>
         {/* Quick Looks hidden on Medium Screen Size*/}
-        <div className='grow hidden lg:flex gap-3'>
+        <div className='hidden grow gap-3 lg:flex'>
           <a
             target='_blank'
             rel='noopener noreferrer'
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
           </a>
         </div>
 
-        <div className='grow flex justify-between items-center gap-5'>
+        <div className='flex grow items-center justify-between gap-5'>
           <div className='flex'>
             <p>CRUZHACKS © 2023</p>
           </div>
@@ -59,35 +59,35 @@ const Footer: React.FC = () => {
               rel='noopener noreferrer'
               href='https://www.instagram.com/cruzhacks/?hl=en'
             >
-              <img src={InstagramLogo} />
+              <img src={InstagramLogo} alt='Instagram Logo' />
             </a>
             <a
               target='_blank'
               rel='noopener noreferrer'
               href='https://www.facebook.com/CruzHacks/'
             >
-              <img src={FacebookLogo} />
+              <img src={FacebookLogo} alt='Facebook Logo' />
             </a>
             <a
               target='_blank'
               rel='noopener noreferrer'
               href='https://www.linkedin.com/company/cruzhacks'
             >
-              <img src={LinkedinLogo} />
+              <img src={LinkedinLogo} alt='LinkedIn Logo' />
             </a>
             <a
               target='_blank'
               rel='noopener noreferrer'
               href='mailto:contact@cruzhacks.com'
             >
-              <img src={MailLogo} />
+              <img src={MailLogo} alt='Email Logo' />
             </a>
             <a
               target='_blank'
               rel='noopener noreferrer'
               href='https://twitter.com/CruzHacks'
             >
-              <img src={TwitterLogo} />
+              <img src={TwitterLogo} alt='Twitter Logo' />
             </a>
           </div>
         </div>

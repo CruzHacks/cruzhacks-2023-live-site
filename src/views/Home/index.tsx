@@ -1,6 +1,5 @@
 import React from "react"
 import BackgroundHeader from "../../components/BackgroundHeader"
-import Card from "../../components/Card"
 import Notifications from "./Notifications"
 import QuestionResources from "./QuestionResources"
 import Schedule from "./Schedule"
@@ -11,18 +10,21 @@ const Home: React.FC = () => {
     <>
       <BackgroundHeader />
 
-      <div className='my-20 flex flex-col justify-center items-stretch gap-10'>
-        <h1 className='hidden md:flex self-center gap-3 text-white text-4xl lg:text-6xl'>
+      <div className='my-20 flex flex-col items-stretch justify-center gap-10'>
+        <h1 className='hidden gap-3 self-center text-4xl text-white md:flex lg:gap-5 lg:text-6xl'>
           <span className='flex gap-1'>
-            CRUZHACKS<span className='text-xs mt-1 font-thin'>LIVE</span>
+            CRUZHACKS
+            <span className='mt-1 text-xs font-thin lg:mt-0 lg:text-lg'>
+              LIVE
+            </span>
           </span>{" "}
           2023
         </h1>
 
-        <Card children={<Notifications />} />
-        <Card children={<Schedule />} />
-        <Card children={<WorkshopsFood />} />
-        <Card children={<QuestionResources />} />
+        <Notifications />
+        <Schedule />
+        <WorkshopsFood />
+        <QuestionResources />
       </div>
     </>
   )

@@ -1,10 +1,11 @@
 import React from "react"
+import Card from "../../components/Card"
 
 const Rules: React.FC = () => {
   return (
-    <div>
+    <Card>
       <h1 className='uppercase'>Rules & Policies</h1>
-    </div>
+    </Card>
   )
 }
 

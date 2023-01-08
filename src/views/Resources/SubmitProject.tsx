@@ -1,12 +1,13 @@
 import React from "react"
+import Card from "../../components/Card"
 
 const SubmitProject: React.FC = () => {
   return (
-    <div>
-      <h1 className='uppercase text-purple text-center font-bold'>
+    <Card>
+      <h1 className='text-purple text-center font-bold uppercase'>
         Submit Project
       </h1>
-    </div>
+    </Card>
   )
 }
 

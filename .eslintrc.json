@@ -33,7 +33,7 @@
             "off"
         ],
         "max-len": [
-            "error",
+            "warn",
             {
                 "code": 100,
                 "tabWidth": 2
@@ -42,7 +42,8 @@
         "eol-last": [
             "error",
             "always"
-        ]
+        ],
+        "tailwindcss/no-custom-classname": "off"
     },
     "settings": {
         "react": {
