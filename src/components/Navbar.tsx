@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 
 import CruzhacksLogo from "../assets/logo_cruzhacks-main-white.svg"
+import Button from "./Button"
 
 const Navbar: React.FC = () => {
   const page = useLocation().pathname
@@ -35,7 +36,7 @@ const Navbar: React.FC = () => {
           <Link to='/support/faq-and-rules'>FAQ & Rules</Link>
         </div>
 
-        <a href='/'>Login</a>
+        <Button text='Login' link='/' type='full' />
       </div>
     </div>
   )

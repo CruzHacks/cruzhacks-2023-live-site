@@ -9,13 +9,13 @@ const BackgroundHeader = () => {
   const page = useLocation().pathname
 
   return (
-    <div className='absolute left-0 -z-10 w-screen overflow-hidden'>
+    <div className='fixed left-0 -z-10 w-screen overflow-hidden'>
       <img
         className={
-          "transition-top md:top-8 lg:-top-50 overflow-hidden " +
+          "transition-top overflow-hidden " +
           (page === "/"
-            ? "w-screen top-10 xl:-top-60 "
-            : "top-[4rem] h-80 md:h-auto w-[150vw] max-w-[150vw] md:w-screen")
+            ? "w-screen h-auto top-10"
+            : "top-[4rem] md:top-8 lg:-top-50 h-80 md:h-auto w-[150vw] max-w-[150vw] md:w-screen")
         }
         alt={"Page Background Header"}
         src={page === "/" ? BackgroundHeaderHome : BackgroundHeaderDefault}
