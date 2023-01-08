@@ -1,12 +1,7 @@
-name: cruzhacks-2023-website-production
+name: cruzhacks-2023-live-site-production
 
 env:
-  REACT_APP_AUTH0_DOMAIN: ${{ secrets.REACT_APP_AUTH0_DOMAIN_PROD }}
-  REACT_APP_AUTH0_CLIENTID: ${{ secrets.REACT_APP_AUTH0_CLIENT_PROD }}
-  REACT_APP_AUTH0_AUDIENCE: ${{ secrets.REACT_APP_AUTH0_AUDIENCE_PROD }}
-  REACT_APP_RECAPTCHA_SITE_KEY: ${{ secrets.REACT_APP_RECAPTCHA_SITE_KEY }}
-  REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY_PROD }}
-  REACT_APP_ENDPOINT_URL: ${{ secrets.REACT_APP_ENDPOINT_URL_PROD }}
+  VITE_REACT_APP_TITLE: ${{ secrets.VITE_REACT_APP_TITLE }}
 
 on:
   push:

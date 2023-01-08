@@ -57,8 +57,6 @@ jobs:
           node-version: 16
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
-        env:
-          REACT_APP_MODE: ${{ secrets.MODE_DEV }} 
       - name: Deploy to Firebase -- Test
         run: yarn deploy:dev --token $token
         env:
