@@ -2,12 +2,17 @@
 
 import React from "react"
 import { Link } from "react-router-dom"
+import useWindowWidthGreaterThan from "../util/useWindowWithGreaterTHan"
 
 const Navbar: React.FC = () => {
+  // const mobile = !useWindowWidthGreaterThan()
+
   return (
     <div className='fixed top-0 flex w-screen justify-between border-2 bg-white'>
-      <div className='grow border-2'>Cruzhacks</div>
-      <div className='flex grow justify-evenly border-2'>
+      <div className='grow flex items-center justify-center md:justify-start border-2'>
+        <h1>Cruzhacks</h1>
+      </div>
+      <div className='grow hidden md:flex justify-evenly border-2'>
         <Link to='/'>Home</Link>
         <Link to='/map'>Map</Link>
 
