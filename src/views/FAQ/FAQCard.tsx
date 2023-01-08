@@ -8,9 +8,9 @@ const FAQCard: React.FC = () => {
         <li>Are we allowed to build on past projects?</li>
         <li>How many people can be on my team?</li>
         <li>What are the rules?</li>
-        <li>What if I don't know how to code?</li>
+        <li>What if I don&apos;t know how to code?</li>
         <li>How can I get a mentor?</li>
-        <li>I don't see my question here.</li>
+        <li>I don&apos;t see my question here.</li>
       </ul>
     </Card>
   )

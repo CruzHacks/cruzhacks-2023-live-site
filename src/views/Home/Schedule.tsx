@@ -39,33 +39,34 @@ const Schedule: React.FC = () => {
   return (
     <Card title={"Schedule"}>
       <div className='flex flex-col gap-10'>
-        <ul className='flex justify-evenly'>
-          {scheduleInfo.map((item, i) => {
+        <div className='flex justify-evenly'>
+          {scheduleInfo.map((schedule, key) => {
             return (
-              <li
-                key={i}
+              <button
+                key={key}
                 className={
                   "cursor-pointer p-1 px-3 rounded-full text-sm text-thin text-darkgray " +
-                  (day == item.id && "bg-gray")
+                  (day == schedule.id && "bg-gray")
                 }
-                onClick={() => setDay(i)}
+                onClick={() => setDay(key)}
+                onKeyDown={() => setDay(key)}
               >
-                {"Day " + (i + 1)}
-              </li>
+                {"Day " + (key + 1)}
+              </button>
             )
           })}
-        </ul>
+        </div>
 
-        <ul className='flex flex-col gap-5 h-72'>
+        <ul className='flex h-72 flex-col gap-5'>
           <li className='text-darkgray'>{scheduleInfo[day].date}</li>
           <li className='border-darkgray border-b-2'></li>
 
-          {scheduleInfo[day].events.map((item, i) => {
+          {scheduleInfo[day].events.map((schedule, key) => {
             return (
-              <li className='flex justify-between items-center' key={i}>
-                <p>{item[0]}</p>
+              <li className='flex items-center justify-between' key={key}>
+                <p>{schedule[0]}</p>
                 <div className='w-5'></div>
-                <p className='shrink-0 text-darkgray'>{item[1]}</p>
+                <p className='text-darkgray shrink-0'>{schedule[1]}</p>
               </li>
             )
           })}

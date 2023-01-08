@@ -32,7 +32,7 @@ const Notifications: React.FC = () => {
 
   return (
     <Card override='self-center p-10 md:p-8 lg:p-8 md:w-5/6'>
-      <h1 className='flex pt-10 md:pt-0 pb-3 gap-3 md:gap-5 text-purple text-xl md:text-2xl font-bold items-center'>
+      <h1 className='text-purple flex items-center gap-3 pt-10 pb-3 text-xl font-bold md:gap-5 md:pt-0 md:text-2xl'>
         <div
           className={
             "w-4 md:w-7 h-4 md:h-7 rounded-full shadow-md " +
@@ -42,10 +42,10 @@ const Notifications: React.FC = () => {
         Live Now
       </h1>
 
-      <ul className='flex flex-col gap-5 h-80 md:p-10 py-5 md:bg-[#D9D9D91A] rounded overflow-y-scroll'>
-        {updates.map(update => {
+      <ul className='flex h-80 flex-col gap-5 overflow-y-scroll rounded py-5 md:bg-[#D9D9D91A] md:p-10'>
+        {updates.map((update, key) => {
           return (
-            <li className='border-b border-[#D7D7D7]'>
+            <li className='border-b border-[#D7D7D7]' key={key}>
               <p className='text-[#61A564]'>{update.time}</p>
               <p className='py-2 md:p-5 md:px-10'>{update.message}</p>
               <p className='float-right text-[#A1A1A1]'>{update.date}</p>

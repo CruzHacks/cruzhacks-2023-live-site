@@ -14,7 +14,7 @@ const Card: React.FC<CardProps> = ({ children, title, override }) => {
       }
     >
       {title && (
-        <h1 className='pb-10 text-purple text-center text-2xl md:text-3xl font-bold uppercase'>
+        <h1 className='text-purple pb-10 text-center text-2xl font-bold uppercase md:text-3xl'>
           {title}
         </h1>
       )}

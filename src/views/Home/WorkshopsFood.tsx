@@ -70,37 +70,38 @@ const WorkshopsFood: React.FC = () => {
 
   const workshop = (
     <div className='flex flex-col gap-10'>
-      <ul className='flex justify-evenly'>
+      <div className='flex justify-evenly'>
         {workshopInfo.map((item, i) => {
           return (
-            <li
+            <button
               key={i}
               className={
                 "cursor-pointer p-1 px-3 rounded-full text-sm text-thin text-darkgray " +
                 (day == item.id && "bg-gray")
               }
               onClick={() => setDay(i)}
+              onKeyDown={() => setDay(i)}
             >
               {"Day " + (i + 1)}
-            </li>
+            </button>
           )
         })}
-      </ul>
+      </div>
 
-      <ul className='flex flex-col gap-5 h-72'>
+      <ul className='flex h-72 flex-col gap-5'>
         <li className='text-darkgray'>{workshopInfo[day].date}</li>
         <li className='border-darkgray border-b-2'></li>
 
         {workshopInfo[day].events.map((workshop, i) => {
           return (
-            <li className='flex justify-between items-center' key={i}>
+            <li className='flex items-center justify-between' key={i}>
               <div>
                 <p>{workshop.title}</p>
                 <p className='text-[#696969]'>{workshop.location}</p>
                 <p className='text-[#A7A7A7]'>{workshop.level}</p>
               </div>
               <div className='w-5'></div>
-              <div className='shrink-0 text-thin text-right'>
+              <div className='text-thin shrink-0 text-right'>
                 <p className='text-darkgray'>{workshop.startTime}-</p>
                 <p className='text-darkgray'>{workshop.endTime}</p>
               </div>
@@ -119,27 +120,29 @@ const WorkshopsFood: React.FC = () => {
 
   return (
     <Card>
-      <div className='flex flex-col gap-10 items-center mb-10'>
-        <ul className='flex items-center justify-between bg-gray rounded-xl w-fit'>
-          <li
+      <div className='mb-10 flex flex-col items-center gap-10'>
+        <div className='bg-gray flex w-fit items-center justify-between rounded-xl'>
+          <button
             className={
               "cursor-pointer p-3 px-9 rounded-xl uppercase " +
               (slider && "bg-purple text-white")
             }
             onClick={() => setSlider(true)}
+            onKeyDown={() => setSlider(true)}
           >
             Workshops
-          </li>
-          <li
+          </button>
+          <button
             className={
               "cursor-pointer p-3 px-9 rounded-xl uppercase " +
               (!slider && "bg-purple text-white")
             }
             onClick={() => setSlider(false)}
+            onKeyDown={() => setSlider(false)}
           >
             Food
-          </li>
-        </ul>
+          </button>
+        </div>
       </div>
 
       {slider ? workshop : food}
