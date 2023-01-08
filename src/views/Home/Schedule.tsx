@@ -2,8 +2,8 @@ import React from "react"
 
 const Schedule: React.FC = () => {
   return (
-    <div className='border-2'>
-      <h1>Schedule</h1>
+    <div>
+      <h1 className='uppercase text-purple text-center font-bold'>Schedule</h1>
     </div>
   )
 }

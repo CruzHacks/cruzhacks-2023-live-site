@@ -13,9 +13,9 @@ function App() {
   console.log(VITE_APP_TITLE)
 
   return (
-    <>
+    <div className='bg-gray'>
       <Navbar />
-      <div className='max-w-screen-md mx-auto border-2 border-red-500'>
+      <div className='max-w-screen-md mx-auto p-10'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route
@@ -27,7 +27,7 @@ function App() {
         </Routes>
       </div>
       <Footer />
-    </>
+    </div>
   )
 }
 

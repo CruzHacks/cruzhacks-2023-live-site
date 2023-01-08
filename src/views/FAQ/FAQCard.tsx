@@ -2,7 +2,7 @@ import React from "react"
 
 const FAQCard: React.FC = () => {
   return (
-    <div className='border-2'>
+    <div>
       <h1 className='uppercase'>FAQ</h1>
     </div>
   )

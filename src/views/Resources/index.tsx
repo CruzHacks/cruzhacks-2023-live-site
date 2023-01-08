@@ -1,4 +1,6 @@
 import React from "react"
+import Card from "../../components/Card"
+import EventInfo from "./EventInfo"
 import Hackerpack from "./Hackerpack"
 import SubmitProject from "./SubmitProject"
 import TeamFinder from "./TeamFinder"
@@ -8,10 +10,10 @@ const Resources = () => {
     <div className='my-20 flex flex-col justify-center items-center gap-10'>
       <h1>Everything you will need is right here</h1>
 
-      <Hackerpack />
-      <TeamFinder />
-      <SubmitProject />
-      <TeamFinder />
+      <Card children={<Hackerpack />} />
+      <Card children={<TeamFinder />} />
+      <Card children={<SubmitProject />} />
+      <Card children={<EventInfo />} />
     </div>
   )
 }

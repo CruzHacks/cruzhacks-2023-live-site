@@ -2,8 +2,10 @@ import React from "react"
 
 const TeamFinder: React.FC = () => {
   return (
-    <div className='border-2'>
-      <h1 className='uppercase'>Find a Team to Join & Submit</h1>
+    <div>
+      <h1 className='uppercase text-purple text-center font-bold'>
+        Find a Team to Join & Submit
+      </h1>
     </div>
   )
 }

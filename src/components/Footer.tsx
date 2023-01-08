@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
   return (
     <>
       {/* Mobile */}
-      <footer className='flex md:hidden fixed bottom-0 w-screen bg-white justify-evenly border-2'>
+      <footer className='flex md:hidden fixed p-5 bottom-0 w-screen bg-white text-darkgray justify-evenly'>
         <Link to='/map'>icon map</Link>
         <Link to='/support/resources-and-support'>icon resources</Link>
         <Link to='/'>icon home</Link>
@@ -14,9 +14,9 @@ const Footer: React.FC = () => {
       </footer>
 
       {/* Desktop */}
-      <footer className='hidden md:flex justify-between border-2'>
+      <footer className='hidden md:flex p-5 justify-between bg-navy text-white'>
         {/* Quick Looks hidden on Medium */}
-        <div className='grow hidden lg:flex gap-3 border-2'>
+        <div className='grow hidden lg:flex gap-3'>
           <a
             target='_blank'
             rel='noopener noreferrer'
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
           </a>
         </div>
 
-        <div className='grow border-2 flex justify-end gap-1'>
+        <div className='grow flex justify-end gap-1'>
           <div className=''>CRUZHACKS © 2023</div>
           {/* <a
           target='_blank'
