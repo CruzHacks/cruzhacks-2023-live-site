@@ -2,8 +2,8 @@ import React from "react"
 
 const Footer: React.FC = () => {
   return (
-    <footer className='flex align-center justify-between border-2'>
-      <div className='grow border-2'>
+    <footer className='flex justify-between border-2'>
+      <div className='grow border-2 flex gap-3'>
         <a
           target='_blank'
           rel='noopener noreferrer'
@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         >
           Contact Us
         </a>
-        <span className=''> | </span>
+        <span>|</span>
         <a
           target='_blank'
           rel='noopener noreferrer'
@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
         >
           Code of Conduct
         </a>
-        <span className=''> | </span>
+        <span>|</span>
         <a
           target='_blank'
           // eslint-disable-next-line max-len
@@ -29,8 +29,8 @@ const Footer: React.FC = () => {
           Participant Agreement
         </a>
       </div>
-      <div className='grow border-2'>
-        <div className='footer__copyright'>CRUZHACKS © 2023</div>
+      <div className='grow border-2 flex justify-end gap-1'>
+        <div className=''>CRUZHACKS © 2023</div>
         {/* <a
           target='_blank'
           rel='noopener noreferrer'
