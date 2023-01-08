@@ -3,7 +3,7 @@ import Card from "../../components/Card"
 
 const EventInfo: React.FC = () => {
   return (
-    <Card title='Event Info'>
+    <Card introTitle='Need Something?' title='Event Info'>
       <p>WiFi</p>
     </Card>
   )
