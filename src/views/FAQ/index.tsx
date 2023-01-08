@@ -8,8 +8,10 @@ const FAQ = () => {
     <>
       <BackgroundHeader />
 
-      <div className='my-20 flex flex-col items-center justify-center gap-10'>
-        <h1 className='text-4xl text-white lg:text-6xl'>FAQ & Rules</h1>
+      <div className='my-20 flex flex-col items-stretch justify-center gap-10'>
+        <h1 className='md:py-10 text-4xl text-white lg:text-6xl'>
+          FAQ & Rules
+        </h1>
 
         <FAQCard />
         <Rules />

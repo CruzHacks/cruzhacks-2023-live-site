@@ -9,7 +9,7 @@ const BackgroundHeader = () => {
 
   return (
     <img
-      className='lg:-top-50 absolute top-10 left-0 -z-10 w-screen md:top-0 xl:-top-60'
+      className='absolute transition-top top-10 md:top-0 lg:-top-50 left-0 -z-10 w-screen'
       alt={"Page Background Header"}
       src={page === "/" ? BackgroundHeaderHome : BackgroundHeaderHome}
     />
