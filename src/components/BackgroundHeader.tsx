@@ -8,6 +8,8 @@ import BackgroundHeaderDefault from "../assets/background_header-curve.png"
 const BackgroundHeader = () => {
   const page = useLocation().pathname
 
+  // TODO: Fix Large Home Screen Image top placement/height
+
   return (
     <div className='fixed left-0 -z-10 w-screen overflow-hidden'>
       <img
