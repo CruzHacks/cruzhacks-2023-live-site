@@ -1,5 +1,6 @@
 import React from "react"
 import BackgroundHeader from "../../components/BackgroundHeader"
+import Modal from "../../components/Modal"
 import FAQCard from "./FAQCard"
 import Rules from "./Rules"
 

@@ -23,7 +23,7 @@ const Card: React.FC<CardProps> = ({
       }
     >
       {introTitle && (
-        <h2 className='text-darkgray pb-5 md:pb-10 text-sm md:text-lg font-bold uppercase'>
+        <h2 className='text-darkgray pb-5 text-sm font-bold uppercase md:pb-10 md:text-lg'>
           {introTitle}
         </h2>
       )}

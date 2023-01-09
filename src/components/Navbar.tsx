@@ -24,17 +24,17 @@ const Navbar: React.FC = () => {
         <div
           onMouseEnter={() => setHoverSupportMenu(true)}
           onMouseLeave={() => setHoverSupportMenu(false)}
-          className='w-[8rem] pt-[3rem] fixed -ml-5'
+          className='fixed -ml-5 w-[8rem] pt-[3rem]'
         >
-          <div className='bg-navy rounded-lg p-3 flex flex-col gap-2 text-sm'>
+          <div className='bg-navy flex flex-col gap-2 rounded-lg p-3 text-sm'>
             <Link
-              className='p-1 rounded-lg hover:bg-[#595973]'
+              className='rounded-lg p-1 hover:bg-[#595973]'
               to='/support/resources-and-support'
             >
               Resources & Support
             </Link>
             <Link
-              className='p-1 rounded-lg hover:bg-[#595973]'
+              className='rounded-lg p-1 hover:bg-[#595973]'
               to='/support/faq-and-rules'
             >
               FAQ & Rules
@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
   )
 
   return (
-    <div className='bg-navy fixed top-0 flex w-screen justify-between p-5 text-white'>
+    <div className='bg-navy fixed top-0 z-50 flex w-screen justify-between p-5 text-white'>
       <div className='flex grow items-center justify-center gap-3 md:justify-start'>
         <img className='h-9' src={CruzhacksLogo} alt='CruzHacks Logo' />
         <h1 className='flex gap-1 text-2xl'>

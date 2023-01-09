@@ -15,7 +15,7 @@ const TeamFinder: React.FC = () => {
           </a>{" "}
           to find your team of hackers!
         </li>
-        <li className='px-5 flex flex-col gap-2'>
+        <li className='flex flex-col gap-2 px-5'>
           <p>Team Formation Guidelines:</p>
           <p className='font-thin'>- Must be compromised of 1-4 people</p>
           <p className='font-thin'>

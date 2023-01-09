@@ -25,13 +25,17 @@ const EventInfo: React.FC = () => {
           </p>
           <p className='font-thin'>Mentors/Volunteers: Blue Shirt</p>
           <p className='font-thin'>
-            Join our Slack <a className='text-blue underline italic'>here</a>.
+            Join our Slack{" "}
+            <a className='text-blue italic underline' href='/'>
+              here
+            </a>
+            .
           </p>
         </div>
 
         <div>
           <p>Emergency Contacts</p>
-          <div className='mt-5 md:px-5 flex flex-col gap-5'>
+          <div className='mt-5 flex flex-col gap-5 md:px-5'>
             <div className='flex flex-col gap-2'>
               <p>UC Police Dispatch</p>
               <p className='font-thin'>831-459-2231 ext 1</p>

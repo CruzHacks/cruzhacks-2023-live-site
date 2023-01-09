@@ -3,8 +3,6 @@
 import React, { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 
-import { ReactComponent as MapLogo } from "../assets/logo_nav-map-gray.svg"
-
 // Mobile Nav Logos
 import MapNavLogo from "../assets/logo_nav-map-gray.svg"
 import HomeNavLogo from "../assets/logo_nav-home-gray.svg"
@@ -18,6 +16,8 @@ import FacebookLogo from "../assets/logo_social-facebook-white.svg"
 import LinkedinLogo from "../assets/logo_social-linkedin-white.svg"
 import MailLogo from "../assets/logo_social-mail-white.svg"
 import TwitterLogo from "../assets/logo_social-twitter-white.svg"
+import LogoutModal from "./LogoutModal"
+import SwitchAccountsModal from "./SwitchAccountsModal"
 
 interface FooterSocialProps {
   link: string
@@ -35,8 +35,14 @@ const FooterSocial: React.FC<FooterSocialProps> = ({ link, src, alt }) => {
 
 const Footer: React.FC = () => {
   const page = useLocation().pathname
+
+  // Settings Submenu
   const [hoverSupport, setHoverSupport] = useState(false)
   const [hoverSupportMenu, setHoverSupportMenu] = useState(false)
+
+  // Logout Modal
+  const [showLogout, setShowLogout] = useState(false)
+  const [showSwitchAccount, setShowSwitchAccount] = useState(false)
 
   const SettingsMenu = (
     <div className='flex flex-col'>
@@ -52,21 +58,23 @@ const Footer: React.FC = () => {
         <div
           onMouseEnter={() => setHoverSupportMenu(true)}
           onMouseLeave={() => setHoverSupportMenu(false)}
-          className='w-[9rem] pb-[3rem] fixed -mt-[6rem] right-0'
+          className='fixed right-0 -mt-[6rem] w-[9rem] pb-[3rem]'
         >
-          <div className='bg-white rounded-lg p-3 flex flex-col gap-2 text-sm'>
-            <Link
-              className='p-1 rounded-lg hover:bg-gray'
-              to='/support/resources-and-support'
+          <div className='flex flex-col gap-2 rounded-lg bg-white p-3 text-sm'>
+            <button
+              className='hover:bg-gray rounded-lg p-1'
+              onClick={() => setShowLogout(true)}
+              onKeyDown={() => setShowLogout(true)}
             >
               Log Out
-            </Link>
-            <Link
-              className='p-1 rounded-lg hover:bg-gray'
-              to='/support/faq-and-rules'
+            </button>
+            <button
+              className='hover:bg-gray rounded-lg p-1'
+              onClick={() => setShowSwitchAccount(true)}
+              onKeyDown={() => setShowSwitchAccount(true)}
             >
               Switch Accounts
-            </Link>
+            </button>
           </div>
         </div>
       )}
@@ -76,10 +84,9 @@ const Footer: React.FC = () => {
   return (
     <>
       {/* Mobile */}
-      <footer className='md:hidden text-darkgray fixed bottom-0 flex w-screen items-center justify-evenly bg-white p-5'>
+      <footer className='text-darkgray fixed bottom-0 z-50 flex w-screen items-center justify-evenly bg-white p-5 md:hidden'>
         <Link className='flex flex-col items-center gap-2' to='/map'>
-          <MapLogo />
-          {/* <img className='h-8' src={MapNavLogo} alt='Map Logo' /> */}
+          <img className='h-8' src={MapNavLogo} alt='Map Logo' />
           <p className={page === "/map" ? "text-purple" : ""}>Map</p>
         </Link>
         <Link
@@ -87,7 +94,7 @@ const Footer: React.FC = () => {
           to='/support/resources-and-support'
         >
           <img
-            className='h-8 fill-purple'
+            className='fill-purple h-8'
             src={ResourcesNavLogo}
             alt='Resources Logo'
           />
@@ -114,6 +121,14 @@ const Footer: React.FC = () => {
         </Link>
         {SettingsMenu}
       </footer>
+
+      {showLogout ? (
+        <LogoutModal setOpen={setShowLogout} />
+      ) : showSwitchAccount ? (
+        <SwitchAccountsModal setOpen={setShowSwitchAccount} />
+      ) : (
+        <></>
+      )}
 
       {/* Desktop */}
       <footer className='bg-navy hidden justify-between p-5 px-8 text-white md:flex'>
