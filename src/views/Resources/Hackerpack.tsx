@@ -22,7 +22,7 @@ const Hackerpack: React.FC = () => {
           override='w-full md:w-1/2'
         />
         <Button
-          text='View Hacker Packet'
+          text='Starter Pack'
           link=''
           type='clear'
           override='w-full md:w-1/2'

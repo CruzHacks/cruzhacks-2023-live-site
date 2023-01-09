@@ -1,14 +1,23 @@
 import React from "react"
+import Button from "../../components/Button"
 import Card from "../../components/Card"
 
 const SubmitProject: React.FC = () => {
   return (
     <Card introTitle='Finished Your Project?' title='Submit Project'>
-      <p>
-        Log in to CruzHacks portal and head over to Team&gt;Submit Project.
-        Follow instructions accordingly to submit your project or click the
-        button below to be taken directly!
-      </p>
+      <div className='flex flex-col items-center gap-5 md:w-2/3 m-auto'>
+        <p>
+          Log in to CruzHacks portal and head over to Team&gt;Submit Project.
+          Follow instructions accordingly to submit your project or click the
+          button below to be taken directly!
+        </p>
+        <Button
+          text='Submit Project'
+          link=''
+          type='full'
+          override='w-full md:w-2/3'
+        />
+      </div>
     </Card>
   )
 }

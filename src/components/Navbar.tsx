@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
           onMouseLeave={() => setHoverSupportMenu(false)}
           className='w-[8rem] pt-[3rem] fixed'
         >
-          <div className='bg-navy p-3 flex flex-col gap-2 text-sm'>
+          <div className='bg-navy rounded-lg p-3 flex flex-col gap-2 text-sm'>
             <Link
               className='p-1 rounded-lg hover:bg-[#595973]'
               to='/support/resources-and-support'

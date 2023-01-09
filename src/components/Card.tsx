@@ -23,14 +23,14 @@ const Card: React.FC<CardProps> = ({
       }
     >
       {introTitle && (
-        <h2 className='text-darkgray pb-10 text-sm md:text-lg font-bold uppercase'>
+        <h2 className='text-darkgray pb-5 md:pb-10 text-sm md:text-lg font-bold uppercase'>
           {introTitle}
         </h2>
       )}
       {title && (
         <h1
           className={
-            "text-purple pb-10 text-2xl font-bold uppercase md:text-3xl " +
+            "text-purple pb-5 md:pb-10 text-2xl font-bold uppercase md:text-3xl " +
             (introTitle ? "text-left md:text-center" : "text-center")
           }
         >
