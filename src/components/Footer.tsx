@@ -1,22 +1,79 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
+// Mobile Nav Logos
+import MapNavLogo from "../assets/logo_nav-map-gray.svg"
+import HomeNavLogo from "../assets/logo_nav-home-gray.svg"
+import SettingsNavLogo from "../assets/logo_nav-settings-gray.svg"
+import ResourcesNavLogo from "../assets/logo_nav-resources-gray.svg"
+import FaqNavLogo from "../assets/logo_nav-FAQ-gray.svg"
+
+// Desktop Social Logos
 import InstagramLogo from "../assets/logo_social-instagram-white.svg"
 import FacebookLogo from "../assets/logo_social-facebook-white.svg"
 import LinkedinLogo from "../assets/logo_social-linkedin-white.svg"
 import MailLogo from "../assets/logo_social-mail-white.svg"
 import TwitterLogo from "../assets/logo_social-twitter-white.svg"
 
+interface FooterSocialProps {
+  link: string
+  src: string
+  alt: string
+}
+
+const FooterSocial: React.FC<FooterSocialProps> = ({ link, src, alt }) => {
+  return (
+    <a target='_blank' rel='noopener noreferrer' href={link}>
+      <img src={src} alt={alt} />
+    </a>
+  )
+}
+
 const Footer: React.FC = () => {
+  const page = useLocation().pathname
+
   return (
     <>
       {/* Mobile */}
-      <footer className='text-darkgray fixed bottom-0 flex w-screen justify-evenly bg-white p-5 md:hidden'>
-        <Link to='/map'>icon map</Link>
-        <Link to='/support/resources-and-support'>icon resources</Link>
-        <Link to='/'>icon home</Link>
-        <Link to='/support/faq-and-rules'>icon faq</Link>
-        <div>icon settings</div>
+      <footer className='md:hidden text-darkgray fixed bottom-0 flex w-screen items-center justify-evenly bg-white p-5'>
+        <Link className='flex flex-col items-center gap-2' to='/map'>
+          <img className='h-8' src={MapNavLogo} alt='Map Logo' />
+          <p className={page === "/map" ? "text-purple" : ""}>Map</p>
+        </Link>
+        <Link
+          className='flex flex-col items-center gap-2'
+          to='/support/resources-and-support'
+        >
+          <img
+            className='h-8 fill-purple'
+            src={ResourcesNavLogo}
+            alt='Resources Logo'
+          />
+          <p
+            className={
+              page === "/support/resources-and-support" ? "text-purple" : ""
+            }
+          >
+            Resources
+          </p>
+        </Link>
+        <Link className='flex flex-col items-center gap-2' to='/'>
+          <img className='h-8' src={HomeNavLogo} alt='Home Logo' />
+          <p className={page === "/" ? "text-purple" : ""}>Home</p>
+        </Link>
+        <Link
+          className='flex flex-col items-center gap-2'
+          to='/support/faq-and-rules'
+        >
+          <img className='h-8' src={FaqNavLogo} alt='FAQ Logo' />
+          <p className={page === "/support/faq-and-rules" ? "text-purple" : ""}>
+            Faq
+          </p>
+        </Link>
+        <div className='flex flex-col items-center gap-2'>
+          <img className='h-8' src={SettingsNavLogo} alt='Settings Logo' />
+          <p>Settings</p>
+        </div>
       </footer>
 
       {/* Desktop */}
@@ -54,41 +111,31 @@ const Footer: React.FC = () => {
             <p>CRUZHACKS © 2023</p>
           </div>
           <div className='flex justify-end gap-5'>
-            <a
-              target='_blank'
-              rel='noopener noreferrer'
-              href='https://www.instagram.com/cruzhacks/?hl=en'
-            >
-              <img src={InstagramLogo} alt='Instagram Logo' />
-            </a>
-            <a
-              target='_blank'
-              rel='noopener noreferrer'
-              href='https://www.facebook.com/CruzHacks/'
-            >
-              <img src={FacebookLogo} alt='Facebook Logo' />
-            </a>
-            <a
-              target='_blank'
-              rel='noopener noreferrer'
-              href='https://www.linkedin.com/company/cruzhacks'
-            >
-              <img src={LinkedinLogo} alt='LinkedIn Logo' />
-            </a>
-            <a
-              target='_blank'
-              rel='noopener noreferrer'
-              href='mailto:contact@cruzhacks.com'
-            >
-              <img src={MailLogo} alt='Email Logo' />
-            </a>
-            <a
-              target='_blank'
-              rel='noopener noreferrer'
-              href='https://twitter.com/CruzHacks'
-            >
-              <img src={TwitterLogo} alt='Twitter Logo' />
-            </a>
+            <FooterSocial
+              link='https://www.instagram.com/cruzhacks/?hl=en'
+              src={InstagramLogo}
+              alt='Instagram Logo'
+            />
+            <FooterSocial
+              link='https://www.facebook.com/CruzHacks/'
+              src={FacebookLogo}
+              alt='Facebook Logo'
+            />
+            <FooterSocial
+              link='https://www.linkedin.com/company/cruzhacks'
+              src={LinkedinLogo}
+              alt='LinkedIn Logo'
+            />
+            <FooterSocial
+              link='mailto:contact@cruzhacks.com'
+              src={MailLogo}
+              alt='Email Logo'
+            />
+            <FooterSocial
+              link='https://twitter.com/CruzHacks'
+              src={TwitterLogo}
+              alt='Twitter Logo'
+            />
           </div>
         </div>
       </footer>
