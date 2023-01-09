@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
         <div
           onMouseEnter={() => setHoverSupportMenu(true)}
           onMouseLeave={() => setHoverSupportMenu(false)}
-          className='w-[8rem] pt-[3rem] fixed'
+          className='w-[8rem] pt-[3rem] fixed -ml-5'
         >
           <div className='bg-navy rounded-lg p-3 flex flex-col gap-2 text-sm'>
             <Link
@@ -69,7 +69,12 @@ const Navbar: React.FC = () => {
 
         {SupportMenu}
 
-        <Button text='Login' link='/' type='full' override='p-0' />
+        <Button
+          text='Login'
+          link='/'
+          type='full'
+          override='p-0 px-8 lg:px-20'
+        />
       </div>
     </div>
   )

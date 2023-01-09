@@ -11,12 +11,17 @@ const BackgroundHeader = () => {
   // TODO: Fix Large Home Screen Image top placement/height
 
   return (
-    <div className='fixed left-0 -z-10 w-screen overflow-hidden'>
+    <div
+      className={
+        "transition-top fixed left-0 -z-10 w-screen overflow-hidden " +
+        (page === "/" ? "md:-top-10" : "")
+      }
+    >
       <img
         className={
           "transition-top overflow-hidden " +
           (page === "/"
-            ? "w-screen h-auto top-10"
+            ? "w-screen md:h-[45vh]"
             : "top-[4rem] md:top-8 lg:-top-50 h-80 md:h-auto w-[150vw] max-w-[150vw] md:w-screen")
         }
         alt={"Page Background Header"}
