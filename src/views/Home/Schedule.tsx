@@ -28,6 +28,10 @@ const scheduleInfo = [
       ["Some event", "12:00 am"],
       ["Some event", "12:00 am"],
       ["Some event", "12:00 am"],
+      ["Some event", "12:00 am"],
+      ["Some event", "12:00 am"],
+      ["Some event", "12:00 am"],
+      ["Some event", "12:00 am"],
       ["Final event", "8:00 pm"],
     ],
   },
@@ -60,16 +64,17 @@ const Schedule: React.FC = () => {
         <ul className='flex h-72 flex-col gap-5'>
           <li className='text-darkgray'>{scheduleInfo[day].date}</li>
           <li className='border-darkgray border-b-2'></li>
-
-          {scheduleInfo[day].events.map((schedule, key) => {
-            return (
-              <li className='flex items-center justify-between' key={key}>
-                <p>{schedule[0]}</p>
-                <div className='w-5'></div>
-                <p className='text-darkgray shrink-0'>{schedule[1]}</p>
-              </li>
-            )
-          })}
+          <ul className='flex flex-col gap-5 overflow-y-scroll'>
+            {scheduleInfo[day].events.map((schedule, key) => {
+              return (
+                <li className='flex items-center justify-between' key={key}>
+                  <p>{schedule[0]}</p>
+                  <div className='w-5'></div>
+                  <p className='text-darkgray shrink-0'>{schedule[1]}</p>
+                </li>
+              )
+            })}
+          </ul>
         </ul>
       </div>
     </Card>
