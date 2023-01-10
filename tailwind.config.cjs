@@ -3,6 +3,8 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
+      barlow: ["'barlow'", "sans-serif"],
+      nunito: ["'Nunito Sans'", "sans-serif"],
       sans: ['"Inter"', "sans-serif"],
     },
     colors: {

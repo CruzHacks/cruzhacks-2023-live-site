@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
       <p
         onMouseEnter={() => setHoverSupport(true)}
         onMouseLeave={() => setHoverSupport(false)}
-        className={page.split("/")[1] === "support" ? "border-purple h-7 border-b-2" : ""}
+        className={"border-b-2 " + (page.split("/")[1] === "support" ? "border-purple" : "border-navy")}
       >
         Support
       </p>
@@ -41,21 +41,21 @@ const Navbar: React.FC = () => {
     <div className='bg-navy fixed top-0 z-50 flex w-screen justify-between p-5 text-white'>
       <div className='flex grow items-center justify-center gap-3 md:justify-start'>
         <img className='h-9' src={CruzhacksLogo} alt='CruzHacks Logo' />
-        <h1 className='flex gap-1 text-2xl'>
+        <h1 className='flex gap-1 text-2xl font-barlow'>
           CRUZHACKS<span className='mt-1 text-xs font-thin'>LIVE</span>
         </h1>
       </div>
-      <div className='hidden grow justify-evenly md:flex'>
-        <Link to='/' className={page === "/" ? "border-purple h-7 border-b-2" : ""}>
+      <div className='h-7 hidden grow items-center justify-evenly md:flex font-nunito font-thin'>
+        <Link to='/' className={"border-b-2 " + (page === "/" ? "border-purple" : "border-navy")}>
           Home
         </Link>
-        <Link to='/map' className={page === "/map" ? "border-purple h-7 border-b-2" : ""}>
+        <Link to='/map' className={"border-b-2 " + (page === "/map" ? "border-purple" : "border-navy")}>
           Map
         </Link>
 
         {SupportMenu}
 
-        <Button text='Login' link='/' type='full' override='p-0 px-8 pt-1 lg:px-20' />
+        <Button text='Login' link='/' type='full' override='p-0 px-8 lg:px-20' />
       </div>
     </div>
   )

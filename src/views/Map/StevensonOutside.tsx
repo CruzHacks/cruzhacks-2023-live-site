@@ -20,7 +20,7 @@ const MapKeyItem: React.FC<MapKeyItemInterface> = ({ color, label }) => {
 const StevensonOutside: React.FC = () => {
   return (
     <Card override='p-5 md:p-5 lg:w-[70rem] lg:ml-[-12rem]'>
-      <div className='flex flex-col gap-4 md:gap-10 md:flex-row'>
+      <div className='flex flex-col gap-5 md:gap-10 md:flex-row'>
         <img className='md:w-2/3' src={StevensonMapImg} alt='UCSC Stevenson College Map' />
         <div className='h-100 grow-1 flex flex-col justify-evenly gap-2 md:gap-5'>
           <MapKeyItem color='bg-[#FF1f22]' label='Stevenson Event Center' />
