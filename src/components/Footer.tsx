@@ -1,14 +1,31 @@
-/// <reference types="vite-plugin-svgr/client" />
-
 import React, { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
+import LogoutModal from "./Modal/LogoutModal"
+import SwitchAccountsModal from "./Modal/SwitchAccountsModal"
 
 // Mobile Nav Logos
-import MapNavLogo from "../assets/logo_nav-map-gray.svg"
-import HomeNavLogo from "../assets/logo_nav-home-gray.svg"
-import SettingsNavLogo from "../assets/logo_nav-settings-gray.svg"
-import ResourcesNavLogo from "../assets/logo_nav-resources-gray.svg"
-import FaqNavLogo from "../assets/logo_nav-FAQ-gray.svg"
+import MapNavLogo from "./NavIcons/MapNavLogo"
+import HomeNavLogo from "./NavIcons/HomeNavLogo"
+import FaqNavLogo from "./NavIcons/FaqNavLogo"
+import SettingsNavLogo from "./NavIcons/SettingsNavLogo"
+import ResourcesNavLogo from "./NavIcons/ResourcesNavLogo"
+import NavLogoProps from "./NavIcons/NavLogo.model"
+
+interface FooterNavProps {
+  page: string
+  target: string
+  title: string
+  Icon: React.FC<NavLogoProps>
+}
+
+const FooterNav: React.FC<FooterNavProps> = ({ page, target, title, Icon }) => {
+  return (
+    <Link className='flex flex-col items-center gap-2' to={target}>
+      <Icon override={"h-8 w-9 " + (page === target ? "fill-[#6F6FE8]" : "fill-[#5F5F5F]")} />
+      <p className={page === target ? "text-purple" : ""}>{title}</p>
+    </Link>
+  )
+}
 
 // Desktop Social Logos
 import InstagramLogo from "../assets/logo_social-instagram-white.svg"
@@ -16,8 +33,6 @@ import FacebookLogo from "../assets/logo_social-facebook-white.svg"
 import LinkedinLogo from "../assets/logo_social-linkedin-white.svg"
 import MailLogo from "../assets/logo_social-mail-white.svg"
 import TwitterLogo from "../assets/logo_social-twitter-white.svg"
-import LogoutModal from "./Modal/LogoutModal"
-import SwitchAccountsModal from "./Modal/SwitchAccountsModal"
 
 interface FooterSocialProps {
   link: string
@@ -36,13 +51,13 @@ const FooterSocial: React.FC<FooterSocialProps> = ({ link, src, alt }) => {
 const Footer: React.FC = () => {
   const page = useLocation().pathname
 
-  // Settings Submenu
-  const [hoverSupport, setHoverSupport] = useState(false)
-  const [hoverSupportMenu, setHoverSupportMenu] = useState(false)
-
   // Logout Modal
   const [showLogout, setShowLogout] = useState(false)
   const [showSwitchAccount, setShowSwitchAccount] = useState(false)
+
+  // Settings Submenu
+  const [hoverSupport, setHoverSupport] = useState(false)
+  const [hoverSupportMenu, setHoverSupportMenu] = useState(false)
 
   const SettingsMenu = (
     <div className='flex flex-col'>
@@ -51,7 +66,10 @@ const Footer: React.FC = () => {
         onMouseEnter={() => setHoverSupport(true)}
         onMouseLeave={() => setHoverSupport(false)}
       >
-        <img className='h-8' src={SettingsNavLogo} alt='Settings Logo' />
+        <SettingsNavLogo
+          override={"h-8 w-9"}
+          fill={hoverSupport || hoverSupportMenu ? "#6F6FE8" : "#5F5F5F"}
+        />
         <p>Settings</p>
       </div>
       {(hoverSupport || hoverSupportMenu) && (
@@ -83,45 +101,7 @@ const Footer: React.FC = () => {
 
   return (
     <>
-      {/* Mobile */}
-      <footer className='text-darkgray fixed bottom-0 z-50 flex w-screen items-center justify-evenly bg-white p-5 md:hidden'>
-        <Link className='flex flex-col items-center gap-2' to='/map'>
-          <img className='h-8' src={MapNavLogo} alt='Map Logo' />
-          <p className={page === "/map" ? "text-purple" : ""}>Map</p>
-        </Link>
-        <Link
-          className='flex flex-col items-center gap-2'
-          to='/support/resources-and-support'
-        >
-          <img
-            className='fill-purple h-8'
-            src={ResourcesNavLogo}
-            alt='Resources Logo'
-          />
-          <p
-            className={
-              page === "/support/resources-and-support" ? "text-purple" : ""
-            }
-          >
-            Resources
-          </p>
-        </Link>
-        <Link className='flex flex-col items-center gap-2' to='/'>
-          <img className='h-8' src={HomeNavLogo} alt='Home Logo' />
-          <p className={page === "/" ? "text-purple" : ""}>Home</p>
-        </Link>
-        <Link
-          className='flex flex-col items-center gap-2'
-          to='/support/faq-and-rules'
-        >
-          <img className='h-8' src={FaqNavLogo} alt='FAQ Logo' />
-          <p className={page === "/support/faq-and-rules" ? "text-purple" : ""}>
-            Faq
-          </p>
-        </Link>
-        {SettingsMenu}
-      </footer>
-
+      {/* Modal Display */}
       {showLogout ? (
         <LogoutModal setOpen={setShowLogout} />
       ) : showSwitchAccount ? (
@@ -130,15 +110,25 @@ const Footer: React.FC = () => {
         <></>
       )}
 
-      {/* Desktop */}
+      {/* Mobile Footer */}
+      <footer className='text-darkgray fixed bottom-0 z-50 flex w-screen items-center justify-evenly bg-white p-5 md:hidden'>
+        <FooterNav page={page} target='/map' title='Map' Icon={MapNavLogo} />
+        <FooterNav
+          page={page}
+          target='/support/resources-and-support'
+          title='Resources'
+          Icon={ResourcesNavLogo}
+        />
+        <FooterNav page={page} target='/' title='Home' Icon={HomeNavLogo} />
+        <FooterNav page={page} target='/support/faq-and-rules' title='FAQ' Icon={FaqNavLogo} />
+        {SettingsMenu}
+      </footer>
+
+      {/* Desktop Footer */}
       <footer className='bg-navy hidden justify-between p-5 px-8 text-white md:flex'>
         {/* Quick Looks hidden on Medium Screen Size*/}
         <div className='hidden grow gap-3 lg:flex'>
-          <a
-            target='_blank'
-            rel='noopener noreferrer'
-            href='mailto:contact@cruzhacks.com'
-          >
+          <a target='_blank' rel='noopener noreferrer' href='mailto:contact@cruzhacks.com'>
             Contact Us
           </a>
           <span>|</span>
@@ -170,26 +160,14 @@ const Footer: React.FC = () => {
               src={InstagramLogo}
               alt='Instagram Logo'
             />
-            <FooterSocial
-              link='https://www.facebook.com/CruzHacks/'
-              src={FacebookLogo}
-              alt='Facebook Logo'
-            />
+            <FooterSocial link='https://www.facebook.com/CruzHacks/' src={FacebookLogo} alt='Facebook Logo' />
             <FooterSocial
               link='https://www.linkedin.com/company/cruzhacks'
               src={LinkedinLogo}
               alt='LinkedIn Logo'
             />
-            <FooterSocial
-              link='mailto:contact@cruzhacks.com'
-              src={MailLogo}
-              alt='Email Logo'
-            />
-            <FooterSocial
-              link='https://twitter.com/CruzHacks'
-              src={TwitterLogo}
-              alt='Twitter Logo'
-            />
+            <FooterSocial link='mailto:contact@cruzhacks.com' src={MailLogo} alt='Email Logo' />
+            <FooterSocial link='https://twitter.com/CruzHacks' src={TwitterLogo} alt='Twitter Logo' />
           </div>
         </div>
       </footer>
