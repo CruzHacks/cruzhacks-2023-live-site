@@ -44,7 +44,7 @@ const EventInfo: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className='h-5'></div>
+        <div className='md:h-5'></div>
       </div>
     </Card>
   )
