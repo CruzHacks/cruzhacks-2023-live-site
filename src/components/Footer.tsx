@@ -22,7 +22,7 @@ const FooterNav: React.FC<FooterNavProps> = ({ page, target, title, Icon }) => {
   return (
     <Link className='grow flex flex-col items-center gap-2' to={target}>
       <Icon override={"h-8 w-9 " + (page === target ? "fill-[#6F6FE8]" : "fill-[#5F5F5F]")} />
-      <p className={"font-thin " + (page === target ? "text-purple" : "")}>{title}</p>
+      <p className={page === target ? "text-purple" : ""}>{title}</p>
     </Link>
   )
 }
