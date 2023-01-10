@@ -1,10 +1,7 @@
 import React from "react"
+import NavLogoProps from "./NavLogo.model"
 
-interface SettingsNavLogoProps {
-  override?: string
-  fill?: string
-}
-const SettingsNavLogo: React.FC<SettingsNavLogoProps> = ({ override, fill }) => {
+const SettingsNavLogo: React.FC<NavLogoProps> = ({ override, fill }) => {
   return (
     <div>
       <svg

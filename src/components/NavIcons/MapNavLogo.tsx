@@ -1,9 +1,7 @@
 import React from "react"
+import NavLogoProps from "./NavLogo.model"
 
-interface MapNavLogoProps {
-  override?: string
-}
-const MapNavLogo: React.FC<MapNavLogoProps> = ({ override }) => {
+const MapNavLogo: React.FC<NavLogoProps> = ({ override }) => {
   return (
     <div>
       <svg

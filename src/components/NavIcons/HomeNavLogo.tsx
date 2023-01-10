@@ -1,9 +1,7 @@
 import React from "react"
+import NavLogoProps from "./NavLogo.model"
 
-interface HomeNavLogoProps {
-  override?: string
-}
-const HomeNavLogo: React.FC<HomeNavLogoProps> = ({ override }) => {
+const HomeNavLogo: React.FC<NavLogoProps> = ({ override }) => {
   return (
     <div>
       <svg className={override} width='37' height='31' viewBox='0 0 37 31' xmlns='http://www.w3.org/2000/svg'>

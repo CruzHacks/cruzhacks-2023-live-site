@@ -7,6 +7,25 @@ import SwitchAccountsModal from "./Modal/SwitchAccountsModal"
 import MapNavLogo from "./NavIcons/MapNavLogo"
 import HomeNavLogo from "./NavIcons/HomeNavLogo"
 import FaqNavLogo from "./NavIcons/FaqNavLogo"
+import SettingsNavLogo from "./NavIcons/SettingsNavLogo"
+import ResourcesNavLogo from "./NavIcons/ResourcesNavLogo"
+import NavLogoProps from "./NavIcons/NavLogo.model"
+
+interface FooterNavProps {
+  page: string
+  target: string
+  title: string
+  Icon: React.FC<NavLogoProps>
+}
+
+const FooterNav: React.FC<FooterNavProps> = ({ page, target, title, Icon }) => {
+  return (
+    <Link className='flex flex-col items-center gap-2' to={target}>
+      <Icon override={"h-8 w-9 " + (page === target ? "fill-[#6F6FE8]" : "fill-[#5F5F5F]")} />
+      <p className={page === target ? "text-purple" : ""}>{title}</p>
+    </Link>
+  )
+}
 
 // Desktop Social Logos
 import InstagramLogo from "../assets/logo_social-instagram-white.svg"
@@ -14,8 +33,6 @@ import FacebookLogo from "../assets/logo_social-facebook-white.svg"
 import LinkedinLogo from "../assets/logo_social-linkedin-white.svg"
 import MailLogo from "../assets/logo_social-mail-white.svg"
 import TwitterLogo from "../assets/logo_social-twitter-white.svg"
-import SettingsNavLogo from "./NavIcons/SettingsNavLogo"
-import ResourcesNavLogo from "./NavIcons/ResourcesNavLogo"
 
 interface FooterSocialProps {
   link: string
@@ -34,13 +51,13 @@ const FooterSocial: React.FC<FooterSocialProps> = ({ link, src, alt }) => {
 const Footer: React.FC = () => {
   const page = useLocation().pathname
 
-  // Settings Submenu
-  const [hoverSupport, setHoverSupport] = useState(false)
-  const [hoverSupportMenu, setHoverSupportMenu] = useState(false)
-
   // Logout Modal
   const [showLogout, setShowLogout] = useState(false)
   const [showSwitchAccount, setShowSwitchAccount] = useState(false)
+
+  // Settings Submenu
+  const [hoverSupport, setHoverSupport] = useState(false)
+  const [hoverSupportMenu, setHoverSupportMenu] = useState(false)
 
   const SettingsMenu = (
     <div className='flex flex-col'>
@@ -84,36 +101,7 @@ const Footer: React.FC = () => {
 
   return (
     <>
-      {/* Mobile */}
-      <footer className='text-darkgray fixed bottom-0 z-50 flex w-screen items-center justify-evenly bg-white p-5 md:hidden'>
-        <Link className='flex flex-col items-center gap-2' to='/map'>
-          <MapNavLogo override={"h-8 w-9 " + (page === "/map" ? "fill-[#6F6FE8]" : "fill-[#5F5F5F]")} />
-          <p className={page === "/map" ? "text-purple" : ""}>Map</p>
-        </Link>
-
-        <Link className='flex flex-col items-center gap-2' to='/support/resources-and-support'>
-          <ResourcesNavLogo
-            override={
-              "h-8 w-9 " + (page === "/support/resources-and-support" ? "fill-[#6F6FE8]" : "fill-[#5F5F5F]")
-            }
-          />
-          <p className={page === "/support/resources-and-support" ? "text-purple" : ""}>Resources</p>
-        </Link>
-
-        <Link className='flex flex-col items-center gap-2' to='/'>
-          <HomeNavLogo override={"h-8 w-9 " + (page === "/" ? "fill-[#6F6FE8]" : "fill-[#5F5F5F]")} />
-          <p className={page === "/" ? "text-purple" : ""}>Home</p>
-        </Link>
-
-        <Link className='flex flex-col items-center gap-2' to='/support/faq-and-rules'>
-          <FaqNavLogo
-            override={"h-8 w-9 " + (page === "/support/faq-and-rules" ? "fill-[#6F6FE8]" : "fill-[#5F5F5F]")}
-          />
-          <p className={page === "/support/faq-and-rules" ? "text-purple" : ""}>Faq</p>
-        </Link>
-        {SettingsMenu}
-      </footer>
-
+      {/* Modal Display */}
       {showLogout ? (
         <LogoutModal setOpen={setShowLogout} />
       ) : showSwitchAccount ? (
@@ -122,7 +110,21 @@ const Footer: React.FC = () => {
         <></>
       )}
 
-      {/* Desktop */}
+      {/* Mobile Footer */}
+      <footer className='text-darkgray fixed bottom-0 z-50 flex w-screen items-center justify-evenly bg-white p-5 md:hidden'>
+        <FooterNav page={page} target='/map' title='Map' Icon={MapNavLogo} />
+        <FooterNav
+          page={page}
+          target='/support/resources-and-support'
+          title='Resources'
+          Icon={ResourcesNavLogo}
+        />
+        <FooterNav page={page} target='/' title='Home' Icon={HomeNavLogo} />
+        <FooterNav page={page} target='/support/faq-and-rules' title='FAQ' Icon={FaqNavLogo} />
+        {SettingsMenu}
+      </footer>
+
+      {/* Desktop Footer */}
       <footer className='bg-navy hidden justify-between p-5 px-8 text-white md:flex'>
         {/* Quick Looks hidden on Medium Screen Size*/}
         <div className='hidden grow gap-3 lg:flex'>
