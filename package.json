@@ -9,7 +9,9 @@
     "lint:ts": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json}\"",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy:dev": "firebase deploy -P default --only hosting:test",
+    "deploy:prod": "firebase deploy -P production --only hosting:production"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.48.0",
