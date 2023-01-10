@@ -6,7 +6,7 @@ const Hackerpack: React.FC = () => {
   return (
     <Card introTitle='Ready to Start Hacking?' title='Hackerpack & Starter Pack'>
       <div className='flex flex-col items-center gap-3'>
-        <p className='mb-10 text-left md:w-5/6'>
+        <p className='mb-10 text-left md:w-5/6 font-nunito'>
           You can find everything you need to know in our Hacker Packet PDF. It covers what you need to bring,
           travel info, workshop info, and more. Our starter pack will have code that can help you jumpstart
           your projects!
