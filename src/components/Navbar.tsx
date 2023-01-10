@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 
-import CruzhacksLogo from "@/assets/logo_cruzhacks-main-white.svg"
+import CruzhacksLogo from "../assets/logo_cruzhacks-main-white.svg"
 import Button from "./Button"
 
 const Navbar: React.FC = () => {
