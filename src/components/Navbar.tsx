@@ -14,9 +14,7 @@ const Navbar: React.FC = () => {
       <p
         onMouseEnter={() => setHoverSupport(true)}
         onMouseLeave={() => setHoverSupport(false)}
-        className={
-          page.split("/")[1] === "support" ? "border-purple h-7 border-b-2" : ""
-        }
+        className={page.split("/")[1] === "support" ? "border-purple h-7 border-b-2" : ""}
       >
         Support
       </p>
@@ -27,16 +25,10 @@ const Navbar: React.FC = () => {
           className='fixed -ml-5 w-[8rem] pt-[3rem]'
         >
           <div className='bg-navy flex flex-col gap-2 rounded-lg p-3 text-sm'>
-            <Link
-              className='rounded-lg p-1 hover:bg-[#595973]'
-              to='/support/resources-and-support'
-            >
+            <Link className='rounded-lg p-1 hover:bg-[#595973]' to='/support/resources-and-support'>
               Resources & Support
             </Link>
-            <Link
-              className='rounded-lg p-1 hover:bg-[#595973]'
-              to='/support/faq-and-rules'
-            >
+            <Link className='rounded-lg p-1 hover:bg-[#595973]' to='/support/faq-and-rules'>
               FAQ & Rules
             </Link>
           </div>
@@ -54,27 +46,16 @@ const Navbar: React.FC = () => {
         </h1>
       </div>
       <div className='hidden grow justify-evenly md:flex'>
-        <Link
-          to='/'
-          className={page === "/" ? "border-purple h-7 border-b-2" : ""}
-        >
+        <Link to='/' className={page === "/" ? "border-purple h-7 border-b-2" : ""}>
           Home
         </Link>
-        <Link
-          to='/map'
-          className={page === "/map" ? "border-purple h-7 border-b-2" : ""}
-        >
+        <Link to='/map' className={page === "/map" ? "border-purple h-7 border-b-2" : ""}>
           Map
         </Link>
 
         {SupportMenu}
 
-        <Button
-          text='Login'
-          link='/'
-          type='full'
-          override='p-0 px-8 lg:px-20'
-        />
+        <Button text='Login' link='/' type='full' override='p-0 px-8 pt-1 lg:px-20' />
       </div>
     </div>
   )
