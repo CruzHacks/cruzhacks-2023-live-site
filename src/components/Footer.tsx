@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
   const [hoverSupportMenu, setHoverSupportMenu] = useState(false)
 
   const SettingsMenu = (
-    <div className='flex flex-col'>
+    <div className='grow flex flex-col'>
       <div
         className='flex flex-col items-center gap-2'
         onMouseEnter={() => setHoverSupport(true)}
