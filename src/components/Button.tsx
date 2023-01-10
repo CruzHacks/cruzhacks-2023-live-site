@@ -16,7 +16,9 @@ const Button: React.FC<ButtonProps> = ({ text, override, link, type }) => {
         "p-3 border-2 rounded-md border-purple " + typeStyling + " " + override
       }
     >
-      <a href={link}>{text}</a>
+      <a target='_blank' rel='noopener noreferrer' href={link}>
+        {text}
+      </a>
     </button>
   )
 }
