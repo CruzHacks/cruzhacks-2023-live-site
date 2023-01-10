@@ -22,8 +22,6 @@ const Map: React.FC = () => {
   const [selectedMapIdx, setSelectedMapIdx] = useState(0)
   const [revealSelections, setRevealSelections] = useState(false)
 
-  console.log(selectedMapIdx, Maps.slice(selectedMapIdx))
-
   const select = (i: number) => {
     setSelectedMapIdx(i)
     setRevealSelections(false)
@@ -34,9 +32,7 @@ const Map: React.FC = () => {
       <BackgroundHeader />
 
       <div className='my-20 flex flex-col items-stretch justify-center gap-10'>
-        <h1 className='text-center text-4xl text-white md:py-10 lg:text-6xl'>
-          Event Maps
-        </h1>
+        <h1 className='text-center text-4xl text-white md:py-10 lg:text-6xl'>Event Maps</h1>
 
         <button
           onClick={() => setRevealSelections(!revealSelections)}

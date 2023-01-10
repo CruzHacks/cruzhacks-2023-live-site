@@ -7,11 +7,7 @@ import Home from "./views/Home"
 import Map from "./views/Map"
 import Resources from "./views/Resources"
 
-const { VITE_APP_TITLE } = import.meta.env
-
 function App() {
-  console.log(VITE_APP_TITLE)
-
   return (
     <>
       {/* Background Color z-index Fix (for header images*/}
@@ -22,10 +18,7 @@ function App() {
         <div className='mx-auto max-w-screen-md p-10'>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route
-              path='/support/resources-and-support'
-              element={<Resources />}
-            />
+            <Route path='/support/resources-and-support' element={<Resources />} />
             <Route path='/support/faq-and-rules' element={<FAQ />} />
             <Route path='/map' element={<Map />} />
           </Routes>
