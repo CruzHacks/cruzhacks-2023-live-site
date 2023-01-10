@@ -1,53 +1,33 @@
 import React, { useState } from "react"
 import BackgroundHeader from "../../components/BackgroundHeader"
-import Card from "../../components/Card"
+import StevensonOutside from "./StevensonOutside"
+import StevensonFloorPlan from "./StevensonFloorplan"
 
-import StevensonMapImg from "../../assets/map_outside-stevenson.png"
-
-interface MapKeyItemInterface {
-  color: string
-  label: string
-}
-
-const MapKeyItem: React.FC<MapKeyItemInterface> = ({ color, label }) => {
-  return (
-    <div className='flex items-start gap-5'>
-      <div className={`mt-1 h-6 w-6 shrink-0 rounded-md ${color}`}></div>
-      <p>{label}</p>
-    </div>
-  )
-}
-
-const StevensonMap = (
-  <Card override='p-5 md:p-5 lg:w-[70rem] lg:-ml-[12rem]'>
-    <div className='flex flex-col gap-10 md:flex-row'>
-      <img
-        className='md:w-2/3'
-        src={StevensonMapImg}
-        alt='UCSC Stevenson College Map'
-      />
-      <div className='h-100 grow-1 flex flex-col justify-evenly gap-5'>
-        <MapKeyItem color='bg-[#FF1f22]' label='Stevenson Event Center' />
-        <MapKeyItem color='bg-[#FF33EB]' label='Senior Commons Room' />
-        <MapKeyItem color='bg-[#FFB800]' label='Wagstaff Fireside Lounge' />
-        <MapKeyItem color='bg-[#14FFB9]' label='Classroom 175' />
-        <MapKeyItem color='bg-[#4314FF]' label='Classrooms 150, 151, & 152' />
-        <MapKeyItem color='bg-[#FBFF33]' label='Silverman Conference Room' />
-      </div>
-    </div>
-  </Card>
-)
+import DropdownLogo from "../../assets/logo_dropdown-triangle-gray.svg"
 
 const Maps = [
   {
     id: 0,
     title: "General Area - Stevenson College",
-    map: StevensonMap,
+    map: <StevensonOutside />,
+  },
+  {
+    id: 1,
+    title: "Stevenson Event Center Floorplan",
+    map: <StevensonFloorPlan />,
   },
 ]
 
 const Map: React.FC = () => {
   const [selectedMapIdx, setSelectedMapIdx] = useState(0)
+  const [revealSelections, setRevealSelections] = useState(false)
+
+  console.log(selectedMapIdx, Maps.slice(selectedMapIdx))
+
+  const select = (i: number) => {
+    setSelectedMapIdx(i)
+    setRevealSelections(false)
+  }
 
   return (
     <>
@@ -58,19 +38,33 @@ const Map: React.FC = () => {
           Event Maps
         </h1>
 
-        <div className='bg-gray rounded-xl p-5 shadow-md'>
-          {Maps.map((mapData, i) => {
-            return (
-              <button
-                key={i}
-                onClick={() => setSelectedMapIdx(i)}
-                onKeyDown={() => setSelectedMapIdx(i)}
-              >
-                {mapData.title}
-              </button>
-            )
-          })}
-        </div>
+        <button
+          onClick={() => setRevealSelections(!revealSelections)}
+          onKeyDown={() => setRevealSelections(!revealSelections)}
+          className='bg-gray flex flex-col items-stretch justify-center gap-1 rounded-xl p-5 shadow-md'
+        >
+          <div className='flex justify-between rounded-lg p-3 text-left'>
+            <p>{Maps[selectedMapIdx].title}</p>
+            <img src={DropdownLogo} alt='Dropdown Triangle' />
+          </div>
+          {revealSelections &&
+            Maps.slice()
+              .splice(selectedMapIdx - 1, 1)
+              .map((mapData, i) => {
+                return (
+                  <div
+                    key={i}
+                    role='button'
+                    tabIndex={i}
+                    onClick={() => select(mapData.id)}
+                    onKeyDown={() => select(mapData.id)}
+                    className='rounded-lg p-3 text-left hover:bg-[#E6E6E6]'
+                  >
+                    {mapData.title}
+                  </div>
+                )
+              })}
+        </button>
         {Maps[selectedMapIdx].map}
       </div>
     </>

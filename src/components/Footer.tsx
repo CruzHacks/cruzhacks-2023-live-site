@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
         <div
           onMouseEnter={() => setHoverSupportMenu(true)}
           onMouseLeave={() => setHoverSupportMenu(false)}
-          className='fixed right-0 -mt-[6rem] w-[9rem] pb-[3rem]'
+          className='fixed right-0 mt-[-6rem] w-[9rem] pb-[3rem]'
         >
           <div className='flex flex-col gap-2 rounded-lg bg-white p-3 text-sm'>
             <button
