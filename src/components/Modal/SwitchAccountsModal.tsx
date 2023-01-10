@@ -1,10 +1,10 @@
 import React from "react"
-import Modal from "./Modal"
+import Modal from "."
 
-import checkCircle from "../assets/logo_check-circle.svg"
+import checkCircle from "@/assets/logo_check-circle.svg"
 
-import CruzhacksLogo from "../assets/logo_cruzhacks-main-navy.svg"
-import PortalLogo from "../assets/logo_cruzhacks-portal-navy.svg"
+import CruzhacksLogo from "@/assets/logo_cruzhacks-main-navy.svg"
+import PortalLogo from "@/assets/logo_cruzhacks-portal-navy.svg"
 
 interface SwitchAccountsModalProps {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>

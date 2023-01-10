@@ -4,20 +4,20 @@ import React, { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 
 // Mobile Nav Logos
-import MapNavLogo from "../assets/logo_nav-map-gray.svg"
-import HomeNavLogo from "../assets/logo_nav-home-gray.svg"
-import SettingsNavLogo from "../assets/logo_nav-settings-gray.svg"
-import ResourcesNavLogo from "../assets/logo_nav-resources-gray.svg"
-import FaqNavLogo from "../assets/logo_nav-FAQ-gray.svg"
+import MapNavLogo from "@/assets/logo_nav-map-gray.svg"
+import HomeNavLogo from "@/assets/logo_nav-home-gray.svg"
+import SettingsNavLogo from "@/assets/logo_nav-settings-gray.svg"
+import ResourcesNavLogo from "@/assets/logo_nav-resources-gray.svg"
+import FaqNavLogo from "@/assets/logo_nav-FAQ-gray.svg"
 
 // Desktop Social Logos
-import InstagramLogo from "../assets/logo_social-instagram-white.svg"
-import FacebookLogo from "../assets/logo_social-facebook-white.svg"
-import LinkedinLogo from "../assets/logo_social-linkedin-white.svg"
-import MailLogo from "../assets/logo_social-mail-white.svg"
-import TwitterLogo from "../assets/logo_social-twitter-white.svg"
-import LogoutModal from "./LogoutModal"
-import SwitchAccountsModal from "./SwitchAccountsModal"
+import InstagramLogo from "@/assets/logo_social-instagram-white.svg"
+import FacebookLogo from "@/assets/logo_social-facebook-white.svg"
+import LinkedinLogo from "@/assets/logo_social-linkedin-white.svg"
+import MailLogo from "@/assets/logo_social-mail-white.svg"
+import TwitterLogo from "@/assets/logo_social-twitter-white.svg"
+import LogoutModal from "./Modal/LogoutModal"
+import SwitchAccountsModal from "./Modal/SwitchAccountsModal"
 
 interface FooterSocialProps {
   link: string

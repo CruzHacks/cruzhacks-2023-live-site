@@ -1,5 +1,5 @@
 import React from "react"
-import Modal from "./Modal"
+import Modal from "."
 
 interface LogoutModalProps {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>

@@ -1,8 +1,8 @@
 import React from "react"
 import { useLocation } from "react-router-dom"
 
-import BackgroundHeaderHome from "../assets/background_header-rectangle.png"
-import BackgroundHeaderDefault from "../assets/background_header-curve.png"
+import BackgroundHeaderHome from "@/assets/background_header-rectangle.png"
+import BackgroundHeaderDefault from "@/assets/background_header-curve.png"
 // todo: BackgroundHeaderDefault
 
 const BackgroundHeader = () => {

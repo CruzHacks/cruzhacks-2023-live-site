@@ -1,7 +1,7 @@
 import React from "react"
 import Card from "../../components/Card"
 
-import StevensonMapImg from "../../assets/map_stevenson-floorplan.png"
+import StevensonMapImg from "@/assets/map_stevenson-floorplan.png"
 
 const StevensonFloorPlan: React.FC = () => {
   return (

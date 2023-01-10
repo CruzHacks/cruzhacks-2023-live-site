@@ -1,7 +1,7 @@
 import React from "react"
 import Card from "../../components/Card"
 
-import People from "../../assets/people.png"
+import People from "@/assets/people.png"
 import Button from "../../components/Button"
 
 const QuestionResources: React.FC = () => {

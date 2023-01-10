@@ -1,7 +1,7 @@
 import React from "react"
 import Card from "../../components/Card"
 
-import StevensonMapImg from "../../assets/map_stevenson-outside.png"
+import StevensonMapImg from "@/assets/map_stevenson-outside.png"
 
 interface MapKeyItemInterface {
   color: string
