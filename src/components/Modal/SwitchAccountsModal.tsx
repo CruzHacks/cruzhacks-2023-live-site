@@ -10,9 +10,7 @@ interface SwitchAccountsModalProps {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const SwitchAccountsModal: React.FC<SwitchAccountsModalProps> = ({
-  setOpen,
-}) => {
+const SwitchAccountsModal: React.FC<SwitchAccountsModalProps> = ({ setOpen }) => {
   const myPortal = () => {
     alert("MyPortal")
   }
@@ -24,29 +22,17 @@ const SwitchAccountsModal: React.FC<SwitchAccountsModalProps> = ({
         <div className='justify-stretch flex w-full flex-col gap-1'>
           <button className='flex items-center justify-between rounded-lg border border-[#B6B6E0] p-2'>
             <div className='flex items-center gap-2 text-sm font-thin '>
-              <img
-                src={CruzhacksLogo}
-                alt='CruzHacks Navy Logo'
-                className='h-5'
-              />
+              <img src={CruzhacksLogo} alt='CruzHacks Navy Logo' className='h-5' />
               <p className='text-left'>CruzHacks Live</p>
             </div>
-            <img
-              src={checkCircle}
-              alt='Currently Selected Logo'
-              className='h-4'
-            />
+            <img src={checkCircle} alt='Currently Selected Logo' className='h-4' />
           </button>
           <button
             className='flex items-center gap-2 p-2 text-sm font-thin'
             onClick={myPortal}
             onKeyDown={myPortal}
           >
-            <img
-              src={PortalLogo}
-              className='h-5'
-              alt='CruzHacks Portal Navy Logo'
-            />
+            <img src={PortalLogo} className='h-5' alt='CruzHacks Portal Navy Logo' />
             <p className='text-left'>MyPortal</p>
           </button>
         </div>

@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
           onMouseLeave={() => setHoverSupportMenu(false)}
           className='fixed -ml-5 w-[8rem] pt-[3rem]'
         >
-          <div className='bg-navy flex flex-col gap-2 rounded-lg p-3 text-sm'>
+          <div className='flex flex-col gap-2 rounded-lg bg-navy p-3 text-sm'>
             <Link className='rounded-lg p-1 hover:bg-[#595973]' to='/support/resources-and-support'>
               Resources & Support
             </Link>
@@ -38,14 +38,14 @@ const Navbar: React.FC = () => {
   )
 
   return (
-    <div className='bg-navy fixed top-0 z-50 flex w-screen justify-between p-5 text-white'>
+    <div className='fixed top-0 z-50 flex w-screen justify-between bg-navy p-5 text-white'>
       <div className='flex grow items-center justify-center gap-3 md:justify-start'>
         <img className='h-9' src={CruzhacksLogo} alt='CruzHacks Logo' />
-        <h1 className='flex gap-1 text-2xl font-barlow'>
+        <h1 className='flex gap-1 font-barlow text-2xl'>
           CRUZHACKS<span className='mt-1 text-xs font-thin'>LIVE</span>
         </h1>
       </div>
-      <div className='h-7 hidden grow items-center justify-evenly md:flex font-nunito font-thin'>
+      <div className='hidden h-7 grow items-center justify-evenly font-nunito font-thin md:flex'>
         <Link to='/' className={"border-b-2 " + (page === "/" ? "border-purple" : "border-navy")}>
           Home
         </Link>

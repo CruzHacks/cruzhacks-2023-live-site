@@ -7,30 +7,20 @@ interface CardProps {
   override?: string
 }
 
-const Card: React.FC<CardProps> = ({
-  children,
-  introTitle,
-  title,
-  override,
-}) => {
+const Card: React.FC<CardProps> = ({ children, introTitle, title, override }) => {
   return (
     <div
       className={
-        "p-10 md:p-20 lg:p-50 rounded-xl bg-white shadow-md " +
-        (introTitle && "md:p-10") +
-        " " +
-        override
+        "lg:p-50 rounded-xl bg-white p-10 shadow-md md:p-20 " + (introTitle && "md:p-10") + " " + override
       }
     >
       {introTitle && (
-        <h2 className='text-darkgray pb-5 text-sm font-bold uppercase md:pb-10 md:text-lg'>
-          {introTitle}
-        </h2>
+        <h2 className='pb-5 text-sm font-bold uppercase text-darkgray md:pb-10 md:text-lg'>{introTitle}</h2>
       )}
       {title && (
         <h1
           className={
-            "text-purple pb-5 md:pb-10 text-2xl font-bold uppercase md:text-3xl " +
+            "pb-5 text-2xl font-bold uppercase text-purple md:pb-10 md:text-3xl " +
             (introTitle ? "text-left md:text-center" : "text-center")
           }
         >

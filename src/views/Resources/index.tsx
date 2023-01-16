@@ -11,9 +11,7 @@ const Resources = () => {
       <BackgroundHeader />
 
       <div className='my-20 flex flex-col items-stretch justify-center gap-10'>
-        <h1 className='text-4xl text-white md:py-10 lg:text-6xl'>
-          Everything you will need is right here
-        </h1>
+        <h1 className='text-4xl text-white md:py-10 lg:text-6xl'>Everything you will need is right here</h1>
 
         <Hackerpack />
         <TeamFinder />

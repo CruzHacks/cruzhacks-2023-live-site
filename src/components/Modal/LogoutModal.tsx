@@ -21,11 +21,7 @@ const LogoutModal: React.FC<LogoutModalProps> = ({ setOpen }) => {
         <p className='text-sm font-thin'>Are you sure you want to log out?</p>
       </div>
       <div className='flex h-[4rem] w-full items-stretch justify-evenly'>
-        <button
-          className='grow rounded-bl-lg bg-[#EAEAEA] font-thin'
-          onClick={cancel}
-          onKeyDown={cancel}
-        >
+        <button className='grow rounded-bl-lg bg-[#EAEAEA] font-thin' onClick={cancel} onKeyDown={cancel}>
           Cancel
         </button>
         <button

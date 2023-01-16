@@ -5,7 +5,7 @@ import Card from "../../components/Card"
 const TeamFinder: React.FC = () => {
   return (
     <Card introTitle="Don't Have a Team Yet?" title='Find a Team to Join & Submit'>
-      <ol className='flex flex-col gap-5 font-nunito md:w-5/6 m-auto'>
+      <ol className='m-auto flex flex-col gap-5 font-nunito md:w-5/6'>
         <li>
           1. Join our Slack channel{" "}
           <a className='text-blue underline' href='/'>
@@ -27,7 +27,7 @@ const TeamFinder: React.FC = () => {
           and get ready to start hacking!
         </li>
       </ol>
-      <div className='flex flex-col items-stretch pt-5 w-full'>
+      <div className='flex w-full flex-col items-stretch pt-5'>
         <Button text='Submit Team' link='/' type='full' override='w-full md:w-1/2 m-auto' />
       </div>
     </Card>

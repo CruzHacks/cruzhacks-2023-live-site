@@ -20,7 +20,7 @@ interface FooterNavProps {
 
 const FooterNav: React.FC<FooterNavProps> = ({ page, target, title, Icon }) => {
   return (
-    <Link className='grow flex flex-col items-center gap-2' to={target}>
+    <Link className='flex grow flex-col items-center gap-2' to={target}>
       <Icon override={"h-8 w-9 " + (page === target ? "fill-[#6F6FE8]" : "fill-[#5F5F5F]")} />
       <p className={page === target ? "text-purple" : ""}>{title}</p>
     </Link>
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
   const [hoverSupportMenu, setHoverSupportMenu] = useState(false)
 
   const SettingsMenu = (
-    <div className='grow flex flex-col'>
+    <div className='flex grow flex-col'>
       <div
         className='flex flex-col items-center gap-2'
         onMouseEnter={() => setHoverSupport(true)}
@@ -80,14 +80,14 @@ const Footer: React.FC = () => {
         >
           <div className='flex flex-col gap-2 rounded-lg bg-white p-3 text-sm'>
             <button
-              className='hover:bg-gray rounded-lg p-1'
+              className='rounded-lg p-1 hover:bg-gray'
               onClick={() => setShowLogout(true)}
               onKeyDown={() => setShowLogout(true)}
             >
               Log Out
             </button>
             <button
-              className='hover:bg-gray rounded-lg p-1'
+              className='rounded-lg p-1 hover:bg-gray'
               onClick={() => setShowSwitchAccount(true)}
               onKeyDown={() => setShowSwitchAccount(true)}
             >
@@ -111,7 +111,7 @@ const Footer: React.FC = () => {
       )}
 
       {/* Mobile Footer */}
-      <footer className='text-darkgray fixed bottom-0 z-50 flex w-screen items-center justify-evenly bg-white p-5 md:hidden'>
+      <footer className='fixed bottom-0 z-50 flex w-screen items-center justify-evenly bg-white p-5 text-darkgray md:hidden'>
         <FooterNav page={page} target='/map' title='Map' Icon={MapNavLogo} />
         <FooterNav
           page={page}
@@ -125,7 +125,7 @@ const Footer: React.FC = () => {
       </footer>
 
       {/* Desktop Footer */}
-      <footer className='bg-navy hidden justify-between p-5 px-8 text-white md:flex'>
+      <footer className='hidden justify-between bg-navy p-5 px-8 text-white md:flex'>
         {/* Quick Looks hidden on Medium Screen Size*/}
         <div className='hidden grow gap-3 lg:flex'>
           <a target='_blank' rel='noopener noreferrer' href='mailto:contact@cruzhacks.com'>

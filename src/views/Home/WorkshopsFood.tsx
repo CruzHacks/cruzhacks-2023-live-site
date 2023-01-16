@@ -76,7 +76,7 @@ const WorkshopsFood: React.FC = () => {
             <button
               key={i}
               className={
-                "cursor-pointer p-1 px-3 rounded-full text-sm text-thin text-darkgray " +
+                "text-thin cursor-pointer rounded-full p-1 px-3 text-sm text-darkgray " +
                 (day == item.id && "bg-gray")
               }
               onClick={() => setDay(i)}
@@ -90,7 +90,7 @@ const WorkshopsFood: React.FC = () => {
 
       <ul className='flex h-72 flex-col gap-5'>
         <li className='text-darkgray'>{workshopInfo[day].date}</li>
-        <li className='border-darkgray border-b-2'></li>
+        <li className='border-b-2 border-darkgray'></li>
 
         {workshopInfo[day].events.map((workshop, i) => {
           return (
@@ -121,22 +121,16 @@ const WorkshopsFood: React.FC = () => {
   return (
     <Card>
       <div className='mb-10 flex flex-col items-center gap-10'>
-        <div className='bg-gray flex w-fit items-center justify-between rounded-xl'>
+        <div className='flex w-fit items-center justify-between rounded-xl bg-gray'>
           <button
-            className={
-              "cursor-pointer p-3 px-9 rounded-xl uppercase " +
-              (slider && "bg-purple text-white")
-            }
+            className={"cursor-pointer rounded-xl p-3 px-9 uppercase " + (slider && "bg-purple text-white")}
             onClick={() => setSlider(true)}
             onKeyDown={() => setSlider(true)}
           >
             Workshops
           </button>
           <button
-            className={
-              "cursor-pointer p-3 px-9 rounded-xl uppercase " +
-              (!slider && "bg-purple text-white")
-            }
+            className={"cursor-pointer rounded-xl p-3 px-9 uppercase " + (!slider && "bg-purple text-white")}
             onClick={() => setSlider(false)}
             onKeyDown={() => setSlider(false)}
           >
