@@ -80,14 +80,14 @@ const Footer: React.FC = () => {
         >
           <div className='flex flex-col gap-2 rounded-lg bg-white p-3 text-sm'>
             <button
-              className='hover:bg-gray rounded-lg p-1'
+              className='rounded-lg p-1 hover:bg-gray'
               onClick={() => setShowLogout(true)}
               onKeyDown={() => setShowLogout(true)}
             >
               Log Out
             </button>
             <button
-              className='hover:bg-gray rounded-lg p-1'
+              className='rounded-lg p-1 hover:bg-gray'
               onClick={() => setShowSwitchAccount(true)}
               onKeyDown={() => setShowSwitchAccount(true)}
             >
@@ -111,7 +111,7 @@ const Footer: React.FC = () => {
       )}
 
       {/* Mobile Footer */}
-      <footer className='text-darkgray fixed bottom-0 z-50 flex w-screen items-center justify-evenly bg-white p-5 md:hidden'>
+      <footer className='fixed bottom-0 z-50 flex w-screen items-center justify-evenly bg-white p-5 text-darkgray md:hidden'>
         <FooterNav page={page} target='/map' title='Map' Icon={MapNavLogo} />
         <FooterNav
           page={page}
@@ -125,7 +125,7 @@ const Footer: React.FC = () => {
       </footer>
 
       {/* Desktop Footer */}
-      <footer className='bg-navy hidden justify-between p-5 px-8 text-white md:flex'>
+      <footer className='hidden justify-between bg-navy p-5 px-8 text-white md:flex'>
         {/* Quick Looks hidden on Medium Screen Size*/}
         <div className='hidden grow gap-3 lg:flex'>
           <a target='_blank' rel='noopener noreferrer' href='mailto:contact@cruzhacks.com'>
@@ -151,7 +151,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className='flex grow items-center justify-between gap-5'>
-          <div className='flex'>
+          <div className='flex transform transition-all xl:-translate-x-1/2'>
             <p>CRUZHACKS © 2023</p>
           </div>
           <div className='flex justify-end gap-5'>
