@@ -37,7 +37,7 @@ const Map: React.FC = () => {
         <button
           onClick={() => setRevealSelections(!revealSelections)}
           onKeyDown={() => setRevealSelections(!revealSelections)}
-          className='flex flex-col items-stretch justify-center gap-1 rounded-xl bg-gray p-5 shadow-md'
+          className='bg-gray flex flex-col items-stretch justify-center gap-1 rounded-xl p-5 shadow-md'
         >
           <div className='flex justify-between rounded-lg p-3 text-left'>
             <p>{Maps[selectedMapIdx].title}</p>

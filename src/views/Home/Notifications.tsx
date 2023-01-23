@@ -29,7 +29,7 @@ const Notifications: React.FC = () => {
 
   return (
     <Card override='self-center p-10 md:p-8 lg:p-8 md:w-5/6'>
-      <h1 className='flex items-center gap-3 pt-10 pb-3 text-xl font-bold text-purple md:gap-5 md:pt-0 md:text-2xl'>
+      <h1 className='text-purple flex items-center gap-3 pt-10 pb-3 text-xl font-bold md:gap-5 md:pt-0 md:text-2xl'>
         <div
           className={
             "h-4 w-4 rounded-full shadow-md md:h-7 md:w-7 " + (live ? "bg-[#82D06F] " : "bg-[#ff5050]")

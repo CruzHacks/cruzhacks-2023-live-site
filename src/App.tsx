@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       {/* Background Color z-index Fix (for header images*/}
-      <div className='fixed -z-50 h-screen w-screen bg-gray'></div>
+      <div className='bg-gray fixed -z-50 h-screen w-screen'></div>
 
       <div>
         <Navbar />

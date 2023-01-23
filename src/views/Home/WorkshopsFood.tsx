@@ -90,7 +90,7 @@ const WorkshopsFood: React.FC = () => {
 
       <ul className='flex h-72 flex-col gap-5'>
         <li className='text-darkgray'>{workshopInfo[day].date}</li>
-        <li className='border-b-2 border-darkgray'></li>
+        <li className='border-darkgray border-b-2'></li>
 
         {workshopInfo[day].events.map((workshop, i) => {
           return (
@@ -121,7 +121,7 @@ const WorkshopsFood: React.FC = () => {
   return (
     <Card>
       <div className='mb-10 flex flex-col items-center gap-10'>
-        <div className='flex w-fit items-center justify-between rounded-xl bg-gray'>
+        <div className='bg-gray flex w-fit items-center justify-between rounded-xl'>
           <button
             className={"cursor-pointer rounded-xl p-3 px-9 uppercase " + (slider && "bg-purple text-white")}
             onClick={() => setSlider(true)}

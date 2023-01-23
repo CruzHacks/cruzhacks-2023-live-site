@@ -6,7 +6,7 @@ const Rules: React.FC = () => {
   return (
     <Card title='Rules & Policies'>
       <div className='md:px-10'>
-        <p className='mb-10 font-nunito'>
+        <p className='font-nunito mb-10'>
           Cruzhacks values the importance of a safe and all-inclusive space. We welcome students from all
           backgrounds. Review our rules and policies below.
         </p>

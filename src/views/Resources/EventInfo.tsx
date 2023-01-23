@@ -24,7 +24,7 @@ const EventInfo: React.FC = () => {
           <p>Mentors/Volunteers: Blue Shirt</p>
           <p>
             Join our Slack{" "}
-            <a className='italic text-blue underline' href='/'>
+            <a className='text-blue italic underline' href='/'>
               here
             </a>
             .
