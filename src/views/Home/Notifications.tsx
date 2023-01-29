@@ -1,51 +1,58 @@
+import { onValue, ref } from "firebase/database"
 import React, { useEffect, useState } from "react"
 import Card from "../../components/Card"
-import { getTokenWrapper } from "../../utils/firebase"
+import { rtdb } from "../../utils/firebase"
 
-const updates = [
-  {
-    time: "12:00 PM",
-    date: "Sat, 1/18/20",
-    message: "Panda Express catering served now",
-  },
-  {
-    time: "9:00 AM",
-    date: "Sat, 1/18/20",
-    message: "Intro to Amazon Web Services workshop will be at Workshop A at 10:00AM",
-  },
-  {
-    time: "9:00 AM",
-    date: "Sat, 1/18/20",
-    message: "Intro to Amazon Web Services workshop will be at Workshop A at 10:00AM",
-  },
-  {
-    time: "9:00 AM",
-    date: "Sat, 1/18/20",
-    message: "Intro to Amazon Web Services workshop will be at Workshop A at 10:00AM",
-  },
-]
+type Announcement = {
+  body: string
+  date: number
+  time: number
+  title: string
+}
+// const updates = [
+//   {
+//     time: "12:00 PM",
+//     date: "Sat, 1/18/20",
+//     message: "Panda Express catering served now",
+//   },
+//   {
+//     time: "9:00 AM",
+//     date: "Sat, 1/18/20",
+//     message: "Intro to Amazon Web Services workshop will be at Workshop A at 10:00AM",
+//   },
+//   {
+//     time: "9:00 AM",
+//     date: "Sat, 1/18/20",
+//     message: "Intro to Amazon Web Services workshop will be at Workshop A at 10:00AM",
+//   },
+//   {
+//     time: "9:00 AM",
+//     date: "Sat, 1/18/20",
+//     message: "Intro to Amazon Web Services workshop will be at Workshop A at 10:00AM",
+//   },
+// ]
 
 const Notifications: React.FC = () => {
   const [live, setLive] = useState(true)
-
-  console.log("Token found: ", live)
+  const [updates, setUpdates] = useState<any>([]) // <++> TODO: update type any
 
   useEffect(() => {
-    let data: Promise<string | void>
+    const announcements = ref(rtdb, "Announcements")
+    return onValue(announcements, snapshot => {
+      const data = snapshot.val()
 
-    const tokenFunc = async () => {
-      data = getTokenWrapper(setLive)
-      if (data) {
-        console.log("token is", data)
+      if (snapshot.exists()) {
+        Object.values(data).map(update => {
+          setUpdates((updates: any) => [...updates, update])
+        })
       }
-      return data
-    }
+    })
+  }, [])
 
-    tokenFunc()
-  }, [setLive])
+  console.log(updates)
 
   return (
-    <Card override='self-center p-10 md:p-8 lg:p-8 md:w-5/6'>
+    <Card override='self-center w-full p-10 md:p-8 lg:p-8 md:w-5/6'>
       <h1 className='flex items-center gap-3 pt-10 pb-3 text-xl font-bold text-purple md:gap-5 md:pt-0 md:text-2xl'>
         <div
           className={
@@ -56,11 +63,11 @@ const Notifications: React.FC = () => {
       </h1>
 
       <ul className='flex h-80 flex-col gap-5 overflow-y-scroll rounded py-5 md:bg-[#D9D9D91A] md:p-10'>
-        {updates.map((update, key) => {
+        {updates.map((update: any, key: number) => {
           return (
             <li className='border-b border-[#D7D7D7]' key={key}>
               <p className='text-[#61A564]'>{update.time}</p>
-              <p className='py-2 md:p-5 md:px-10'>{update.message}</p>
+              <p className='py-2 md:p-5 md:px-10'>{update.body}</p>
               <p className='float-right text-[#A1A1A1]'>{update.date}</p>
             </li>
           )
