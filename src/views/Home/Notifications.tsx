@@ -33,7 +33,7 @@ type Announcement = {
 // ]
 
 const Notifications: React.FC = () => {
-  const [live, setLive] = useState(true)
+  const [live, setLive] = useState(false)
   const [updates, setUpdates] = useState<any>([]) // <++> TODO: update type any
 
   useEffect(() => {
@@ -41,6 +41,7 @@ const Notifications: React.FC = () => {
     return onValue(announcements, snapshot => {
       const data = snapshot.val()
 
+      // <++> TODO: Fix bug, new messages duplicates old messages
       if (snapshot.exists()) {
         Object.values(data).map(update => {
           setUpdates((updates: any) => [...updates, update])
@@ -48,6 +49,19 @@ const Notifications: React.FC = () => {
       }
     })
   }, [])
+
+  useEffect(() => {
+    const connectedRef = ref(rtdb, ".info/connected")
+    return onValue(connectedRef, snap => {
+      if (snap.val() === true) {
+        console.log("connected")
+        setLive(true)
+      } else {
+        setLive(false)
+        console.log("not connected")
+      }
+    })
+  })
 
   console.log(updates)
 
