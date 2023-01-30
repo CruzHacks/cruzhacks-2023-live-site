@@ -6,7 +6,6 @@ import { rtdb } from "../../utils/firebase"
 type Announcement = {
   body: string
   date: number
-  time: number
   title: string
 }
 // const updates = [
@@ -36,20 +35,35 @@ const Notifications: React.FC = () => {
   const [live, setLive] = useState(false)
   const [updates, setUpdates] = useState<any>([]) // <++> TODO: update type any
 
+  const convertDate = (date: number) => {
+    const d = new Date(date)
+    return d.toLocaleDateString("default", {
+      weekday: "short",
+      month: "numeric",
+      day: "numeric",
+      year: "2-digit",
+    })
+  }
+
+  const convertTime = (date: number) => {
+    const d = new Date(date)
+    return d.toLocaleTimeString("default", { hour: "numeric", minute: "2-digit" })
+  }
+
+  // Update announcements
   useEffect(() => {
     const announcements = ref(rtdb, "Announcements")
     return onValue(announcements, snapshot => {
       const data = snapshot.val()
+      console.log(data)
 
-      // <++> TODO: Fix bug, new messages duplicates old messages
       if (snapshot.exists()) {
-        Object.values(data).map(update => {
-          setUpdates((updates: any) => [...updates, update])
-        })
+        setUpdates(Object.values(data).reverse())
       }
     })
   }, [])
 
+  // Update live indicator
   useEffect(() => {
     const connectedRef = ref(rtdb, ".info/connected")
     return onValue(connectedRef, snap => {
@@ -61,7 +75,7 @@ const Notifications: React.FC = () => {
         console.log("not connected")
       }
     })
-  })
+  }, [])
 
   console.log(updates)
 
@@ -80,9 +94,9 @@ const Notifications: React.FC = () => {
         {updates.map((update: any, key: number) => {
           return (
             <li className='border-b border-[#D7D7D7]' key={key}>
-              <p className='text-[#61A564]'>{update.time}</p>
+              <p className='text-[#61A564]'>{convertTime(update.date)}</p>
               <p className='py-2 md:p-5 md:px-10'>{update.body}</p>
-              <p className='float-right text-[#A1A1A1]'>{update.date}</p>
+              <p className='float-right text-[#A1A1A1]'>{convertDate(update.date)}</p>
             </li>
           )
         })}
