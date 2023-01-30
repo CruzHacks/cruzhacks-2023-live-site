@@ -10,6 +10,5 @@ export const app = initializeApp(firebaseConfig)
 export const rtdb = getDatabase(app)
 
 if (location.hostname === "localhost") {
-  // Point to the RTDB emulator running on localhost.
   connectDatabaseEmulator(rtdb, "localhost", 9000)
 }

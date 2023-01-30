@@ -1,83 +1,48 @@
 import { onValue, ref } from "firebase/database"
 import React, { useEffect, useState } from "react"
+import { toast } from "react-toastify"
 import Card from "../../components/Card"
 import { rtdb } from "../../utils/firebase"
 
-type Announcement = {
+export type Announcement = {
   body: string
   date: number
   title: string
 }
-// const updates = [
-//   {
-//     time: "12:00 PM",
-//     date: "Sat, 1/18/20",
-//     message: "Panda Express catering served now",
-//   },
-//   {
-//     time: "9:00 AM",
-//     date: "Sat, 1/18/20",
-//     message: "Intro to Amazon Web Services workshop will be at Workshop A at 10:00AM",
-//   },
-//   {
-//     time: "9:00 AM",
-//     date: "Sat, 1/18/20",
-//     message: "Intro to Amazon Web Services workshop will be at Workshop A at 10:00AM",
-//   },
-//   {
-//     time: "9:00 AM",
-//     date: "Sat, 1/18/20",
-//     message: "Intro to Amazon Web Services workshop will be at Workshop A at 10:00AM",
-//   },
-// ]
 
-const Notifications: React.FC = () => {
+const convertDate = (date: number) => {
+  const d = new Date(date)
+  return d.toLocaleDateString("default", {
+    weekday: "short",
+    month: "numeric",
+    day: "numeric",
+    year: "2-digit",
+  })
+}
+
+const convertTime = (date: number) => {
+  const d = new Date(date)
+  return d.toLocaleTimeString("default", { hour: "numeric", minute: "2-digit" })
+}
+
+interface NotificationsProps {
+  announcements: Announcement[]
+}
+
+const Notifications: React.FC<NotificationsProps> = ({ announcements }) => {
   const [live, setLive] = useState(false)
-  const [updates, setUpdates] = useState<any>([]) // <++> TODO: update type any
-
-  const convertDate = (date: number) => {
-    const d = new Date(date)
-    return d.toLocaleDateString("default", {
-      weekday: "short",
-      month: "numeric",
-      day: "numeric",
-      year: "2-digit",
-    })
-  }
-
-  const convertTime = (date: number) => {
-    const d = new Date(date)
-    return d.toLocaleTimeString("default", { hour: "numeric", minute: "2-digit" })
-  }
-
-  // Update announcements
-  useEffect(() => {
-    const announcements = ref(rtdb, "Announcements")
-    return onValue(announcements, snapshot => {
-      const data = snapshot.val()
-      console.log(data)
-
-      if (snapshot.exists()) {
-        setUpdates(Object.values(data).reverse())
-      }
-    })
-  }, [])
 
   // Update live indicator
   useEffect(() => {
     const connectedRef = ref(rtdb, ".info/connected")
     return onValue(connectedRef, snap => {
       if (snap.val() === true) {
-        console.log("connected")
         setLive(true)
       } else {
         setLive(false)
-        console.log("not connected")
       }
     })
   }, [])
-
-  console.log(updates)
 
   return (
     <Card override='self-center w-full p-10 md:p-8 lg:p-8 md:w-5/6'>
@@ -91,7 +56,7 @@ const Notifications: React.FC = () => {
       </h1>
 
       <ul className='flex h-80 flex-col gap-5 overflow-y-scroll rounded py-5 md:bg-[#D9D9D91A] md:p-10'>
-        {updates.map((update: any, key: number) => {
+        {announcements.map((update: any, key: number) => {
           return (
             <li className='border-b border-[#D7D7D7]' key={key}>
               <p className='text-[#61A564]'>{convertTime(update.date)}</p>

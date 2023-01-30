@@ -1,11 +1,15 @@
 import React from "react"
 import BackgroundHeader from "../../components/BackgroundHeader"
-import Notifications from "./Notifications"
+import Notifications, { Announcement } from "./Notifications"
 import QuestionResources from "./QuestionResources"
 import Schedule from "./Schedule"
 import WorkshopsFood from "./WorkshopsFood"
 
-const Home: React.FC = () => {
+interface HomeProps {
+  announcements: Announcement[]
+}
+
+const Home: React.FC<HomeProps> = ({ announcements }) => {
   return (
     <>
       <BackgroundHeader />
@@ -19,7 +23,7 @@ const Home: React.FC = () => {
           2023
         </h1>
 
-        <Notifications />
+        <Notifications announcements={announcements} />
         <Schedule />
         <WorkshopsFood />
         <QuestionResources />
