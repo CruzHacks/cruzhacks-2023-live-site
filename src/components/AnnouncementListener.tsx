@@ -1,0 +1,43 @@
+import React, { useEffect } from "react"
+import { useSnackbar } from "notistack"
+import { onValue, ref } from "firebase/database"
+import { rtdb } from "../utils/firebase"
+import { Announcement } from "../views/Home/Notifications"
+
+const buildAnnouncement = (body: string) => (
+  <div className='flex basis-full flex-col items-center justify-center'>
+    <div className='flex basis-full items-center justify-center font-bold'>Live Update</div>
+    <span className='border-purple mt-1 mb-3 block h-1 min-w-full border-t'></span>
+    <div className='flex basis-full items-center justify-center'>{body}</div>
+  </div>
+)
+
+interface AnnouncementListenerProps {
+  updates: Announcement[]
+  setUpdates: React.Dispatch<React.SetStateAction<Announcement[]>>
+}
+
+const AnnouncementListener: React.FC<AnnouncementListenerProps> = ({ updates, setUpdates }) => {
+  const { enqueueSnackbar } = useSnackbar()
+
+  // Update announcements
+  useEffect(() => {
+    const announcements = ref(rtdb, "Announcements")
+    return onValue(announcements, snapshot => {
+      const data = snapshot.val()
+
+      if (snapshot.exists()) {
+        const _updates: any = Object.values(data).reverse()
+        setUpdates(_updates)
+
+        enqueueSnackbar(buildAnnouncement(_updates[0].body), {
+          preventDuplicate: true,
+        })
+      }
+    })
+  }, [])
+
+  return <></>
+}
+
+export default AnnouncementListener

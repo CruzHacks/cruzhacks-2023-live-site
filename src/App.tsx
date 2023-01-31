@@ -1,45 +1,31 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { Route, Routes } from "react-router-dom"
-import { toast, ToastContainer } from "react-toastify"
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import FAQ from "./views/FAQ"
 import Home from "./views/Home"
 import Map from "./views/Map"
 import Resources from "./views/Resources"
-import { onValue, ref } from "firebase/database"
 import { Announcement } from "./views/Home/Notifications"
-import { rtdb } from "./utils/firebase"
+import { styled } from "@mui/material"
+import AnnouncementListener from "./components/AnnouncementListener"
+import { SnackbarProvider } from "notistack"
 
-import "react-toastify/dist/ReactToastify.css"
+const StyledSnackbarProvider = styled(SnackbarProvider)`
+  &.SnackbarItem-contentRoot {
+    background-color: #1b1b37;
+  }
+`
 
-const notify = (message: Announcement) => {
-  toast(`Live Update: "${message.body}"`)
-}
-
-function App() {
-  const [updates, setUpdates] = useState([])
-
-  // Update announcements
-  useEffect(() => {
-    const announcements = ref(rtdb, "Announcements")
-    return onValue(announcements, snapshot => {
-      const data = snapshot.val()
-
-      if (snapshot.exists()) {
-        const _updates: any = Object.values(data).reverse()
-        setUpdates(_updates)
-
-        notify(_updates[0])
-      }
-    })
-  }, [])
+const App: React.FC = () => {
+  const [updates, setUpdates] = useState<Announcement[]>([])
 
   return (
-    <>
+    <StyledSnackbarProvider maxSnack={3}>
       {/* Background Color z-index Fix (for header images*/}
-      <div className='fixed -z-50 h-screen w-screen bg-gray'></div>
+      <div className='bg-gray fixed -z-50 h-screen w-screen'></div>
 
+      <AnnouncementListener updates={updates} setUpdates={setUpdates} />
       <div>
         <Navbar />
         <div className='mx-auto max-w-screen-md p-10'>
@@ -52,21 +38,7 @@ function App() {
         </div>
         <Footer />
       </div>
-
-      <ToastContainer
-        position='top-right'
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme='light'
-        className='mt-20'
-      />
-    </>
+    </StyledSnackbarProvider>
   )
 }
 

@@ -15,6 +15,10 @@
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.0.0",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.7",
+    "@mui/styled-engine-sc": "^5.11.0",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
     "async": "^3.2.4",
@@ -26,11 +30,12 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.11",
     "firebase": "^9.16.0",
+    "notistack": "^2.0.8",
     "prettier": "^2.8.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.1",
-    "react-toastify": "^9.1.1"
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@types/async": "^3.2.16",
