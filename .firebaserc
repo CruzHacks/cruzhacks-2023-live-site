@@ -1,23 +1,15 @@
 {
   "projects": {
-    "production": "cruzhacks-4a899",
-    "default": "cruzhacks-2023-live-site-dev",
-    "development": "cruzhacks-2023-live-site-dev"
+    "default": "cruzhacks-2023-development"
   },
   "targets": {
-    "cruzhacks-4a899": {
+    "cruzhacks-2023-development": {
       "hosting": {
-        "production": [
-          "cruzhacks-2023-live-site"
-        ]
-      }
-    },
-    "cruzhacks-2023-live-site-dev": {
-      "hosting": {
-        "test": [
-          "cruzhacks-2023-live-site-dev"
+        "live-site": [
+          "cruzhacks-live-site"
         ]
       }
     }
-  }
+  },
+  "etags": {}
 }
