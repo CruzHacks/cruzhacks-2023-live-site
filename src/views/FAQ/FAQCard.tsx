@@ -1,13 +1,12 @@
 import React from "react"
 import Card from "../../components/Card"
-import FAQsData from "./FAQ.data"
-;``
+import { FAQsInfo } from "./FaqInfo"
 
 const FAQCard: React.FC = () => {
   return (
     <Card title='FAQ'>
-      <ul className='font-nunito flex flex-col gap-10'>
-        {FAQsData.map((faq, i) => {
+      <ul className='flex flex-col gap-10 font-nunito'>
+        {FAQsInfo.map((faq, i) => {
           return (
             <li key={i}>
               <h4>{faq.question}</h4>

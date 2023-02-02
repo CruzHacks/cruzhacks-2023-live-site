@@ -1,6 +1,6 @@
 import React from "react"
 
-const FAQsData = [
+export const FAQsInfo = [
   {
     question: "What should I bring?",
     answer: (
@@ -16,7 +16,12 @@ const FAQsData = [
     answer: (
       <>
         All CruzHacks 2023 participants will need to follow the{" "}
-        <a target='_blank' rel='noreferrer' href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf'>
+        <a
+          target='_blank'
+          rel='noreferrer'
+          href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf'
+          className='text-blue'
+        >
           MLH Code of Conduct
         </a>
         , the{" "}
@@ -24,6 +29,7 @@ const FAQsData = [
           target='_blank'
           rel='noreferrer'
           href='https://docs.google.com/document/u/1/d/1298VyEqrSIvbzM3U8nvLQsLtY78Vi2mbndr3d5w0UKk/edit'
+          className='text-blue'
         >
           CruzHacks 2023 Participant and Release Agreement
         </a>
@@ -32,6 +38,7 @@ const FAQsData = [
           target='_blank'
           rel='noreferrer'
           href='https://github.com/CruzHacks/hackathon-rules/blob/master/Rules.md'
+          className='text-blue'
         >
           CruzHacks 2023 Rules
         </a>
@@ -40,6 +47,7 @@ const FAQsData = [
           target='_blank'
           rel='noreferrer'
           href='https://docs.google.com/document/u/1/d/1aq7xN3c8t8AWS-yDBcvqu4EMYmw0025HAoCFuOVld7c/edit'
+          className='text-blue'
         >
           CruzHacks 2023 COVID Safety Policy
         </a>
@@ -60,8 +68,21 @@ const FAQsData = [
     ),
   },
   {
-    question: "Are we allowed to build on past projects?",
-    answer: <></>,
+    question: "What are CruzPoints?",
+    answer: (
+      <>
+        CruzPoints are CruzHacks 2023's point reward system for Hackers! For more information,{" "}
+        <a
+          target='_blank'
+          rel='noreferrer'
+          href='https://docs.google.com/document/d/1kExaZxBGb4VveTr6TDdAOKWLCM7E22OmGRxP4htBTok'
+          className='text-blue'
+        >
+          click here
+        </a>
+        .
+      </>
+    ),
   },
   {
     question: "How many people can be on my team?",
@@ -72,5 +93,3 @@ const FAQsData = [
     answer: <></>,
   },
 ]
-
-export default FAQsData

@@ -1,7 +1,23 @@
 import React, { useState } from "react"
 import Card from "../../components/Card"
-import { foodInfo } from "../../eventInfo/foodInfo"
+import { Dietary, foodInfo } from "../../eventInfo/foodInfo"
 import { workshopInfo } from "../../eventInfo/workshopInfo"
+
+import GlutenFreeLogo from "../../assets/logo_food-glutenFree-gray.svg"
+import VegetairanLogo from "../../assets/logo_food-vegetarian-gray.svg"
+import VeganLogo from "../../assets/logo_food-vegan-gray.svg"
+import PlusLogo from "../../assets/logo_food-plus-gray.svg"
+
+const matchLogo = (symb: Dietary) => {
+  switch (symb) {
+    case Dietary.GlutenFree:
+      return GlutenFreeLogo
+    case Dietary.Vegetarian:
+      return VegetairanLogo
+    case Dietary.Vegan:
+      return VeganLogo
+  }
+}
 
 const WorkshopsFood: React.FC = () => {
   const [slider, setSlider] = useState(true)
@@ -83,9 +99,14 @@ const WorkshopsFood: React.FC = () => {
                 <p>{meal.title}</p>
                 {meal.items.map((item, key) => {
                   return (
-                    <p key={key} className='text-[#696969]'>
-                      {item}
-                    </p>
+                    <span className='flex items-center gap-2'>
+                      <p key={key} className='text-[#696969]'>
+                        {item.name}
+                      </p>
+                      {item.dietary.map((symb, key) => {
+                        return <img key={key} className='w-5' src={matchLogo(symb)} />
+                      })}
+                    </span>
                   )
                 })}
                 <p className='text-[#A7A7A7]'>{meal.provider}</p>
@@ -99,11 +120,23 @@ const WorkshopsFood: React.FC = () => {
         })}
       </ul>
 
-      <div className='rounded-lg bg-gray p-5'>
-        <p>Gluten Free</p>
-        <p>Vegetarian</p>
-        <p>Vegan</p>
-        <p>All Weekend Long:</p>
+      <div className='flex flex-col gap-2 rounded-lg bg-gray p-5'>
+        <span className='flex items-center gap-2'>
+          <img className='w-5' src={GlutenFreeLogo} />
+          <p>Gluten Free</p>
+        </span>
+        <span className='flex items-center gap-2'>
+          <img className='w-5' src={VegetairanLogo} />
+          <p>Vegetarian</p>
+        </span>
+        <span className='flex items-center gap-2'>
+          <img className='w-5' src={VeganLogo} />
+          <p>Vegan</p>
+        </span>
+        <span className='flex items-center gap-2'>
+          <img className='w-5' src={PlusLogo} />
+          <p>All Weekend Long:</p>
+        </span>
       </div>
     </div>
   )
