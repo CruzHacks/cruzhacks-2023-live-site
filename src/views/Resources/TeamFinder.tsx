@@ -5,10 +5,13 @@ import Card from "../../components/Card"
 const TeamFinder: React.FC = () => {
   return (
     <Card introTitle="Don't Have a Team Yet?" title='Find a Team to Join & Submit'>
-      <ol className='font-nunito m-auto flex flex-col gap-5 md:w-5/6'>
+      <ol className='m-auto flex flex-col gap-5 font-nunito md:w-5/6'>
         <li>
           1. Join our Slack channel{" "}
-          <a className='text-blue underline' href='/'>
+          <a
+            className='text-blue underline'
+            href='https://cruzhacks23-attendees.slack.com/archives/C04HZQRR8NS'
+          >
             #team-formation
           </a>{" "}
           to find your team of hackers!
