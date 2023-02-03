@@ -4,8 +4,11 @@ import Card from "../../components/Card"
 
 const TeamFinder: React.FC = () => {
   return (
-    <Card introTitle="Don't Have a Team Yet?" title='Find a Team to Join & Submit'>
-      <ol className='font-nunito m-auto flex flex-col gap-5 md:w-5/6'>
+    <Card
+      introTitle="Don't Have a Team Yet?"
+      title='Find a Team to Join & Submit'
+    >
+      <ol className='m-auto flex flex-col gap-5 font-nunito md:w-5/6'>
         <li>
           1. Join our Slack channel{" "}
           <a
@@ -19,8 +22,12 @@ const TeamFinder: React.FC = () => {
         <li className='flex flex-col gap-2 md:px-5'>
           <p>Team Formation Guidelines:</p>
           <p className='font-thin'>- Must be compromised of 1-4 people</p>
-          <p className='font-thin'>- The project must be completed at the event</p>
-          <p className='font-thin'>- All members must be an accepted applicant to CruzHacks 2023</p>
+          <p className='font-thin'>
+            - The project must be completed at the event
+          </p>
+          <p className='font-thin'>
+            - All members must be an accepted applicant to CruzHacks 2023
+          </p>
         </li>
         <li>
           2. Found your team? Log in and{" "}
@@ -31,7 +38,12 @@ const TeamFinder: React.FC = () => {
         </li>
       </ol>
       <div className='flex w-full flex-col items-stretch pt-5'>
-        <Button text='Submit Team' link='/' type='full' override='w-full md:w-1/2 m-auto' />
+        <Button
+          text='Submit Team'
+          link='https://cruzhacks/myPortal/?ext=team'
+          type='full'
+          override='w-full md:w-1/2 m-auto'
+        />
       </div>
     </Card>
   )

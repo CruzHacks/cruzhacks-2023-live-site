@@ -13,7 +13,8 @@ const BackgroundHeader = () => {
   return (
     <div
       className={
-        "transition-top fixed left-0 -z-10 w-screen overflow-hidden " + (page === "/" ? "md:-top-10" : "")
+        "transition-top fixed left-0 -z-10 w-screen overflow-hidden " +
+        (page === "/" ? "md:-top-10" : "")
       }
     >
       <img

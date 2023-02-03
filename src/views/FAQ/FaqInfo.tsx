@@ -5,9 +5,9 @@ export const FAQsInfo = [
     question: "What should I bring?",
     answer: (
       <>
-        Some essential things to bring include a laptop (with charger), an empty bag for swag, a change of
-        clothes if you plan on spending the night, and a sleeping bag/blanket if you&apos;re not local to
-        Santa Cruz!
+        Some essential things to bring include a laptop (with charger), an empty
+        bag for swag, a change of clothes if you plan on spending the night, and
+        a sleeping bag/blanket if you&apos;re not local to Santa Cruz!
       </>
     ),
   },
@@ -59,11 +59,14 @@ export const FAQsInfo = [
     question: "What are the prize tracks?",
     answer: (
       <>
-        CruzHacks 2023 offers 4 main prize tracks (Health Hacks, Justice Hacks, Sustainability Hacks, and
-        Fintech Hacks). Hackers can submit their project to one of these 4 main prize tracks. We also offer 4
-        category prizes (Best Beginner, Best UI/UX, New Technologies, and Best Slug Hack). Hackers can submit
-        their project to any number of these 4 categories. There will also be sponsors hosting some of their
-        own prize tracks. Hackers can submit their project to any number of sponsored prize tracks.
+        CruzHacks 2023 offers 4 main prize tracks (Health Hacks, Justice Hacks,
+        Sustainability Hacks, and Fintech Hacks). Hackers can submit their
+        project to one of these 4 main prize tracks. We also offer 4 category
+        prizes (Best Beginner, Best UI/UX, New Technologies, and Best Slug
+        Hack). Hackers can submit their project to any number of these 4
+        categories. There will also be sponsors hosting some of their own prize
+        tracks. Hackers can submit their project to any number of sponsored
+        prize tracks.
       </>
     ),
   },
@@ -71,7 +74,8 @@ export const FAQsInfo = [
     question: "What are CruzPoints?",
     answer: (
       <>
-        CruzPoints are CruzHacks 2023&apos;s point reward system for Hackers! For more information,{" "}
+        CruzPoints are CruzHacks 2023&apos;s point reward system for Hackers!
+        For more information,{" "}
         <a
           target='_blank'
           rel='noreferrer'

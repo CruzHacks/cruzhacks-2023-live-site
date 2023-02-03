@@ -5,7 +5,7 @@ import { FAQsInfo } from "./FaqInfo"
 const FAQCard: React.FC = () => {
   return (
     <Card title='FAQ'>
-      <ul className='font-nunito flex flex-col gap-10'>
+      <ul className='flex flex-col gap-10 font-nunito'>
         {FAQsInfo.map((faq, i) => {
           return (
             <li key={i}>
