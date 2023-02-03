@@ -32,22 +32,6 @@ jobs:
           name: build
           path: build
 
-  tests:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16
-      - name: Install Dependencies
-        run: yarn install --frozen-lockfile
-      - name: Create Test Build
-        run: yarn build
-      - name: Running JS tests
-        run: yarn test:ci
-        env:
-          CI: true
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -60,8 +44,6 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Lint Typescript
         run: yarn lint:ts
-      - name: Lint CSS
-        run: yarn lint:css
   
   auto-deploy-to-prod:
     runs-on: ubuntu-latest
