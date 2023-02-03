@@ -2,7 +2,7 @@ name: cruzhacks-2023-live-site-development
 
 env:
   VITE_REACT_APP_TITLE: ${{ secrets.VITE_REACT_APP_TITLE }}
-  VITE_AUTH0_DOMAIN: ${{ secrets.VITE_AUTH_DOMAIN }}
+  VITE_AUTH0_DOMAIN: ${{ secrets.VITE_AUTH0_DOMAIN }}
   VITE_AUTH0_CLIENTID: ${{ secrets.VITE_AUTH0_CLIENTID }}
   VITE_AUTH0_AUDIENCE: ${{ secrets.VITE_AUTH0_AUDIENCE }}
   VITE_FIREBASE_CONFIG: ${{ secrets.VITE_FIREBASE_CONFIG_DEV }}
