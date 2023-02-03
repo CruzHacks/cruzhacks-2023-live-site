@@ -12,7 +12,6 @@ const Button: React.FC<ButtonProps> = ({
   override,
   link,
   type,
-  onClick,
 }) => {
   const typeStyling = type === "clear" ? "text-purple" : "bg-purple text-white"
 
