@@ -10,7 +10,8 @@
     "lint:fix": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json}\"",
     "preview": "vite preview",
-    "deploy": "firebase deploy -P default --only hosting:live-site",
+    "deploy:dev": "firebase deploy -P default --only hosting:live-site",
+    "deploy:prod": "firebase deploy -P default --only hosting:production",
     "emulate:hosting": "vite build && firebase serve -P default --only hosting:live-site -p 3000"
   },
   "dependencies": {
