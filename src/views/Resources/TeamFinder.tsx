@@ -40,7 +40,7 @@ const TeamFinder: React.FC = () => {
       <div className='flex w-full flex-col items-stretch pt-5'>
         <Button
           text='Submit Team'
-          link='https://cruzhacks/myPortal/?ext=team'
+          link='https://cruzhacks.com/myPortal/?ext=team'
           type='full'
           override='w-full md:w-1/2 m-auto'
         />
