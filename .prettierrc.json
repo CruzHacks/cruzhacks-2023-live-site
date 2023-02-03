@@ -6,5 +6,5 @@
   "jsxSingleQuote": true,
   "arrowParens": "avoid",
   "endOfLine": "auto",
-  "printWidth": 110
+  "printWidth": 80
 }

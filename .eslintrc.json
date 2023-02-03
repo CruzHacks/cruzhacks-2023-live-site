@@ -27,18 +27,11 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "@typescript-eslint/no-explicit-any":
-            "off",
+        "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-empty-function": [
             "off"
         ],
-        "max-len": [
-            "warn",
-            {
-                "code": 100,
-                "tabWidth": 2
-            }
-        ],
+        "max-len": "off",
         "eol-last": [
             "error",
             "always"
@@ -49,11 +42,18 @@
         "react": {
             "version": "detect"
         },
-		"import/resolver": {
-			"node": {
-				"paths": ["src"],
-				"extensions": [".js", ".jsx", ".ts", ".tsx"]
-			}
-		}
+        "import/resolver": {
+            "node": {
+                "paths": [
+                    "src"
+                ],
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        }
     }
 }

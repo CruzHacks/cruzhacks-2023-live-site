@@ -25,7 +25,7 @@ const EventInfo: React.FC = () => {
           <p>
             Join our Slack{" "}
             <a
-              className='italic text-blue underline'
+              className='text-blue italic underline'
               href='https://www.google.com/url?q=https://join.slack.com/t/cruzhacks2023-7db8697/shared_invite/zt-1mqu9lds7-x6Lj7T126Bc2p1VkaZt05g&sa=D&source=editors&ust=1675319183050096&usg=AOvVaw1Fxo5ltmaqO1rdNPDcvCif'
             >
               here

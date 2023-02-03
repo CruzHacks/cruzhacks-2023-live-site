@@ -71,7 +71,7 @@ export const FAQsInfo = [
     question: "What are CruzPoints?",
     answer: (
       <>
-        CruzPoints are CruzHacks 2023's point reward system for Hackers! For more information,{" "}
+        CruzPoints are CruzHacks 2023&apos;s point reward system for Hackers! For more information,{" "}
         <a
           target='_blank'
           rel='noreferrer'

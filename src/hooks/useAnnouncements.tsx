@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useSnackbar } from "notistack"
 import { onValue, ref } from "firebase/database"
 import { rtdb } from "../utils/firebase"
@@ -12,32 +12,27 @@ const buildAnnouncement = (body: string) => (
   </div>
 )
 
-interface AnnouncementListenerProps {
-  updates: Announcement[]
-  setUpdates: React.Dispatch<React.SetStateAction<Announcement[]>>
-}
-
-const AnnouncementListener: React.FC<AnnouncementListenerProps> = ({ updates, setUpdates }) => {
+const useAnnoucements = () => {
   const { enqueueSnackbar } = useSnackbar()
+  const [announcements, setAnnouncements] = useState<Announcement[]>([])
 
-  // Update announcements
   useEffect(() => {
     const announcements = ref(rtdb, "Announcements")
     return onValue(announcements, snapshot => {
       const data = snapshot.val()
 
       if (snapshot.exists()) {
-        const _updates: any = Object.values(data).reverse()
-        setUpdates(_updates)
+        const _announcements: any = Object.values(data).reverse()
+        setAnnouncements(_announcements)
 
-        enqueueSnackbar(buildAnnouncement(_updates[0].body), {
+        enqueueSnackbar(buildAnnouncement(_announcements[0].body), {
           preventDuplicate: true,
         })
       }
     })
   }, [])
 
-  return <></>
+  return announcements
 }
 
-export default AnnouncementListener
+export default useAnnoucements

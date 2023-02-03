@@ -46,7 +46,7 @@ const WorkshopsFood: React.FC = () => {
 
       <ul className='flex h-72 flex-col gap-5 overflow-y-scroll'>
         <li className='text-darkgray'>{workshopInfo[workshopDay].date}</li>
-        <li className='border-b-2 border-darkgray'></li>
+        <li className='border-darkgray border-b-2'></li>
 
         {workshopInfo[workshopDay].events.map((workshop, i) => {
           return (
@@ -90,21 +90,26 @@ const WorkshopsFood: React.FC = () => {
 
       <ul className='flex h-60 flex-col gap-5 overflow-y-scroll'>
         <li className='text-darkgray'>{foodInfo[foodDay].date}</li>
-        <li className='border-b-2 border-darkgray'></li>
+        <li className='border-darkgray border-b-2'></li>
 
         {foodInfo[foodDay].events.map((meal, i) => {
           return (
             <li className='flex items-center justify-between' key={i}>
               <div>
                 <p>{meal.title}</p>
-                {meal.items.map((item, key) => {
+                {meal.items.map((item, j) => {
                   return (
-                    <span className='flex items-center gap-2'>
-                      <p key={key} className='text-[#696969]'>
-                        {item.name}
-                      </p>
-                      {item.dietary.map((symb, key) => {
-                        return <img key={key} className='w-5' src={matchLogo(symb)} />
+                    <span key={j} className='flex items-center gap-2'>
+                      <p className='text-[#696969]'>{item.name}</p>
+                      {item.dietary.map((symb, k) => {
+                        return (
+                          <img
+                            key={k}
+                            className='w-5'
+                            src={matchLogo(symb)}
+                            alt='Dietary Restriction Logo'
+                          />
+                        )
                       })}
                     </span>
                   )
@@ -120,21 +125,29 @@ const WorkshopsFood: React.FC = () => {
         })}
       </ul>
 
-      <div className='flex flex-col gap-2 rounded-lg bg-gray p-5'>
+      <div className='bg-gray flex flex-col gap-2 rounded-lg p-5'>
         <span className='flex items-center gap-2'>
-          <img className='w-5' src={GlutenFreeLogo} />
+          <img
+            className='w-5'
+            src={GlutenFreeLogo}
+            alt='Dietary Restriction Logo'
+          />
           <p>Gluten Free</p>
         </span>
         <span className='flex items-center gap-2'>
-          <img className='w-5' src={VegetairanLogo} />
+          <img
+            className='w-5'
+            src={VegetairanLogo}
+            alt='Dietary Restriction Logo'
+          />
           <p>Vegetarian</p>
         </span>
         <span className='flex items-center gap-2'>
-          <img className='w-5' src={VeganLogo} />
+          <img className='w-5' src={VeganLogo} alt='Dietary Restriction Logo' />
           <p>Vegan</p>
         </span>
         <span className='flex items-center gap-2'>
-          <img className='w-5' src={PlusLogo} />
+          <img className='w-5' src={PlusLogo} alt='Dietary Restriction Logo' />
           <p>All Weekend Long:</p>
         </span>
       </div>
@@ -144,16 +157,22 @@ const WorkshopsFood: React.FC = () => {
   return (
     <Card>
       <div className='mb-10 flex flex-col items-center gap-10'>
-        <div className='flex w-fit items-center justify-between rounded-xl bg-gray'>
+        <div className='bg-gray flex w-fit items-center justify-between rounded-xl'>
           <button
-            className={"cursor-pointer rounded-xl p-3 px-9 uppercase " + (slider && "bg-purple text-white")}
+            className={
+              "cursor-pointer rounded-xl p-3 px-9 uppercase " +
+              (slider && "bg-purple text-white")
+            }
             onClick={() => setSlider(true)}
             onKeyDown={() => setSlider(true)}
           >
             Workshops
           </button>
           <button
-            className={"cursor-pointer rounded-xl p-3 px-9 uppercase " + (!slider && "bg-purple text-white")}
+            className={
+              "cursor-pointer rounded-xl p-3 px-9 uppercase " +
+              (!slider && "bg-purple text-white")
+            }
             onClick={() => setSlider(false)}
             onKeyDown={() => setSlider(false)}
           >
