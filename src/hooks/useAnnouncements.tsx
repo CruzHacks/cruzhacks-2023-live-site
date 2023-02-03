@@ -9,7 +9,7 @@ const buildAnnouncement = (body: string) => (
     <div className='flex basis-full items-center justify-center font-bold'>
       Live Update
     </div>
-    <span className='mt-1 mb-3 block h-1 min-w-full border-t border-purple'></span>
+    <span className='border-purple mt-1 mb-3 block h-1 min-w-full border-t'></span>
     <div className='flex basis-full items-center justify-center'>{body}</div>
   </div>
 )
