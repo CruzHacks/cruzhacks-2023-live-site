@@ -1,5 +1,16 @@
 import React from "react"
 
+const starterPack = (
+  <a
+    target='_blank'
+    rel='noreferrer'
+    href='https://github.com/CruzHacks/Cruzhacks-Hacker-Packs'
+    className='text-blue'
+  >
+  &nbsp;starter packs
+  </a>
+)
+
 export const FAQsInfo = [
   {
     question: "What should I bring?",
@@ -90,10 +101,22 @@ export const FAQsInfo = [
   },
   {
     question: "How many people can be on my team?",
-    answer: <></>,
+    answer: (
+    <>
+      There is a maximum of 4 people per team.
+    </>
+    ),
   },
   {
     question: "What if I don't know how to code?",
-    answer: <></>,
+    answer: (
+    <>
+      No experience is required, if you&apos;re stuck reach out to our
+      mentors on slack to get some pointers. If you&apos;re looking to get 
+      started, we&apos;ve provided some code {starterPack}. 
+      Cruzhacks is all about learning and trying something new, be 
+      sure to attend some of our workshops listed in the schedule!
+    </>
+    ),
   },
 ]

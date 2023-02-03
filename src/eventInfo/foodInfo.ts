@@ -6,7 +6,7 @@ export enum Dietary {
 
 export const foodInfo = [
   {
-    date: "Saturday, Febuary 3rd",
+    date: "Friday, Febuary 3rd",
     events: [
       {
         title: "Dinner",
@@ -26,7 +26,7 @@ export const foodInfo = [
     ],
   },
   {
-    date: "Friday, Febuary 4th",
+    date: "Saturday, Febuary 4th",
     events: [
       {
         title: "Breakfast",
@@ -76,7 +76,7 @@ export const foodInfo = [
     ],
   },
   {
-    date: "Saturday, Febuary 5th",
+    date: "Sunday, Febuary 5th",
     events: [
       {
         title: "Breakfast",

@@ -46,7 +46,7 @@ const WorkshopsFood: React.FC = () => {
 
       <ul className='flex h-72 flex-col gap-5 overflow-y-scroll'>
         <li className='text-darkgray'>{workshopInfo[workshopDay].date}</li>
-        <li className='border-b-2 border-darkgray'></li>
+        <li className='border-darkgray border-b-2'></li>
 
         {workshopInfo[workshopDay].events.map((workshop, i) => {
           return (
@@ -90,7 +90,7 @@ const WorkshopsFood: React.FC = () => {
 
       <ul className='flex h-60 flex-col gap-5 overflow-y-scroll'>
         <li className='text-darkgray'>{foodInfo[foodDay].date}</li>
-        <li className='border-b-2 border-darkgray'></li>
+        <li className='border-darkgray border-b-2'></li>
 
         {foodInfo[foodDay].events.map((meal, i) => {
           return (
@@ -125,7 +125,7 @@ const WorkshopsFood: React.FC = () => {
         })}
       </ul>
 
-      <div className='flex flex-col gap-2 rounded-lg bg-gray p-5'>
+      <div className='bg-gray flex flex-col gap-2 rounded-lg p-5'>
         <span className='flex items-center gap-2'>
           <img
             className='w-5'
@@ -157,7 +157,7 @@ const WorkshopsFood: React.FC = () => {
   return (
     <Card>
       <div className='mb-10 flex flex-col items-center gap-10'>
-        <div className='flex w-fit items-center justify-between rounded-xl bg-gray'>
+        <div className='bg-gray flex w-fit items-center justify-between rounded-xl'>
           <button
             className={
               "cursor-pointer rounded-xl p-3 px-9 uppercase " +
