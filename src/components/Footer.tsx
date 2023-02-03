@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 import LogoutModal from "./Modal/LogoutModal"
 import SwitchAccountsModal from "./Modal/SwitchAccountsModal"
+import { useAuth0 } from "@auth0/auth0-react"
 
 // Mobile Nav Logos
 import MapNavLogo from "./NavIcons/MapNavLogo"
@@ -21,7 +22,11 @@ interface FooterNavProps {
 const FooterNav: React.FC<FooterNavProps> = ({ page, target, title, Icon }) => {
   return (
     <Link className='flex grow flex-col items-center gap-2' to={target}>
-      <Icon override={"h-8 w-9 " + (page === target ? "fill-[#6F6FE8]" : "fill-[#5F5F5F]")} />
+      <Icon
+        override={
+          "h-8 w-9 " + (page === target ? "fill-[#6F6FE8]" : "fill-[#5F5F5F]")
+        }
+      />
       <p className={page === target ? "text-purple" : ""}>{title}</p>
     </Link>
   )
@@ -54,6 +59,7 @@ const Footer: React.FC = () => {
   // Logout Modal
   const [showLogout, setShowLogout] = useState(false)
   const [showSwitchAccount, setShowSwitchAccount] = useState(false)
+  const { isAuthenticated } = useAuth0()
 
   // Settings Submenu
   const [hoverSupport, setHoverSupport] = useState(false)
@@ -80,14 +86,14 @@ const Footer: React.FC = () => {
         >
           <div className='flex flex-col gap-2 rounded-lg bg-white p-3 text-sm'>
             <button
-              className='hover:bg-gray rounded-lg p-1'
+              className='rounded-lg p-1 hover:bg-gray'
               onClick={() => setShowLogout(true)}
               onKeyDown={() => setShowLogout(true)}
             >
-              Log Out
+              {isAuthenticated ? "Log Out" : "Log In"}
             </button>
             <button
-              className='hover:bg-gray rounded-lg p-1'
+              className='rounded-lg p-1 hover:bg-gray'
               onClick={() => setShowSwitchAccount(true)}
               onKeyDown={() => setShowSwitchAccount(true)}
             >
@@ -103,7 +109,10 @@ const Footer: React.FC = () => {
     <>
       {/* Modal Display */}
       {showLogout ? (
-        <LogoutModal setOpen={setShowLogout} />
+        <LogoutModal
+          setOpen={setShowLogout}
+          location={window.location.origin}
+        />
       ) : showSwitchAccount ? (
         <SwitchAccountsModal setOpen={setShowSwitchAccount} />
       ) : (
@@ -111,7 +120,7 @@ const Footer: React.FC = () => {
       )}
 
       {/* Mobile Footer */}
-      <footer className='text-darkgray fixed bottom-0 z-50 flex w-screen items-center justify-evenly bg-white p-5 md:hidden'>
+      <footer className='fixed bottom-0 z-50 flex w-screen items-center justify-evenly bg-white p-5 text-darkgray md:hidden'>
         <FooterNav page={page} target='/map' title='Map' Icon={MapNavLogo} />
         <FooterNav
           page={page}
@@ -120,15 +129,24 @@ const Footer: React.FC = () => {
           Icon={ResourcesNavLogo}
         />
         <FooterNav page={page} target='/' title='Home' Icon={HomeNavLogo} />
-        <FooterNav page={page} target='/support/faq-and-rules' title='FAQ' Icon={FaqNavLogo} />
+        <FooterNav
+          page={page}
+          target='/support/faq-and-rules'
+          title='FAQ'
+          Icon={FaqNavLogo}
+        />
         {SettingsMenu}
       </footer>
 
       {/* Desktop Footer */}
-      <footer className='bg-navy hidden justify-between p-5 px-8 text-white md:flex'>
+      <footer className='hidden justify-between bg-navy p-5 px-8 text-white md:flex'>
         {/* Quick Looks hidden on Medium Screen Size*/}
         <div className='hidden grow gap-3 lg:flex'>
-          <a target='_blank' rel='noopener noreferrer' href='mailto:contact@cruzhacks.com'>
+          <a
+            target='_blank'
+            rel='noopener noreferrer'
+            href='mailto:contact@cruzhacks.com'
+          >
             Contact Us
           </a>
           <span>|</span>
@@ -160,14 +178,26 @@ const Footer: React.FC = () => {
               src={InstagramLogo}
               alt='Instagram Logo'
             />
-            <FooterSocial link='https://www.facebook.com/CruzHacks/' src={FacebookLogo} alt='Facebook Logo' />
+            <FooterSocial
+              link='https://www.facebook.com/CruzHacks/'
+              src={FacebookLogo}
+              alt='Facebook Logo'
+            />
             <FooterSocial
               link='https://www.linkedin.com/company/cruzhacks'
               src={LinkedinLogo}
               alt='LinkedIn Logo'
             />
-            <FooterSocial link='mailto:contact@cruzhacks.com' src={MailLogo} alt='Email Logo' />
-            <FooterSocial link='https://twitter.com/CruzHacks' src={TwitterLogo} alt='Twitter Logo' />
+            <FooterSocial
+              link='mailto:contact@cruzhacks.com'
+              src={MailLogo}
+              alt='Email Logo'
+            />
+            <FooterSocial
+              link='https://twitter.com/CruzHacks'
+              src={TwitterLogo}
+              alt='Twitter Logo'
+            />
           </div>
         </div>
       </footer>

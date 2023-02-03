@@ -28,14 +28,14 @@ const Schedule: React.FC = () => {
 
         <ul className='flex h-72 flex-col gap-5'>
           <li className='text-darkgray'>{scheduleInfo[day].date}</li>
-          <li className='border-darkgray border-b-2'></li>
+          <li className='border-b-2 border-darkgray'></li>
           <ul className='flex flex-col gap-5 overflow-y-scroll'>
             {scheduleInfo[day].events.map((schedule, key) => {
               return (
                 <li className='flex items-center justify-between' key={key}>
                   <p>{schedule[0]}</p>
                   <div className='w-5'></div>
-                  <p className='text-darkgray shrink-0'>{schedule[1]}</p>
+                  <p className='shrink-0 text-darkgray'>{schedule[1]}</p>
                 </li>
               )
             })}

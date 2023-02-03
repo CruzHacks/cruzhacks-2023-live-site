@@ -17,7 +17,12 @@ const FaqNavLogo: React.FC<NavLogoProps> = ({ override }) => {
       </g>
       <defs>
         <clipPath id='clip0_7623_7385'>
-          <rect width='26.6566' height='21.9187' fill='white' transform='translate(0.945312 0.349976)' />
+          <rect
+            width='26.6566'
+            height='21.9187'
+            fill='white'
+            transform='translate(0.945312 0.349976)'
+          />
         </clipPath>
       </defs>
     </svg>

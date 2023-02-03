@@ -21,7 +21,11 @@ const StevensonEastRemoteLot: React.FC = () => {
   return (
     <Card override='p-5 md:p-5 lg:w-[60rem] lg:ml-[-8rem]'>
       <div className='flex flex-col gap-5 md:flex-row md:gap-10'>
-        <img className='md:w-2/3' src={StevensonMapImg} alt='UCSC Stevenson College Map' />
+        <img
+          className='md:w-2/3'
+          src={StevensonMapImg}
+          alt='UCSC Stevenson College Map'
+        />
         <div className='h-100 grow-1 flex flex-col justify-evenly gap-2 md:gap-5'>
           <MapKeyItem color='bg-[#4484DB]' label='Stevenson Event Center' />
           <MapKeyItem color='bg-[#DD9F73]' label='East Remote Lot' />

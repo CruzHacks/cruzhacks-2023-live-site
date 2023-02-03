@@ -7,7 +7,13 @@ interface ButtonProps {
   type: "clear" | "full"
 }
 
-const Button: React.FC<ButtonProps> = ({ text, override, link, type }) => {
+const Button: React.FC<ButtonProps> = ({
+  text,
+  override,
+  link,
+  type,
+  onClick,
+}) => {
   const typeStyling = type === "clear" ? "text-purple" : "bg-purple text-white"
 
   return (
@@ -15,7 +21,12 @@ const Button: React.FC<ButtonProps> = ({ text, override, link, type }) => {
       target='_blank'
       rel='noopener noreferrer'
       href={link}
-      className={"rounded-md border-2 border-purple p-3 text-center " + typeStyling + " " + override}
+      className={
+        "rounded-md border-2 border-purple p-3 text-center " +
+        typeStyling +
+        " " +
+        override
+      }
     >
       {text}
     </a>

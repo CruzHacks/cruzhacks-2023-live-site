@@ -38,12 +38,14 @@ const Map: React.FC = () => {
       <BackgroundHeader />
 
       <div className='my-20 flex flex-col items-stretch justify-center gap-10'>
-        <h1 className='text-center text-4xl text-white md:py-10 lg:text-6xl'>Event Maps</h1>
+        <h1 className='text-center text-4xl text-white md:py-10 lg:text-6xl'>
+          Event Maps
+        </h1>
 
         <button
           onClick={() => setRevealSelections(!revealSelections)}
           onKeyDown={() => setRevealSelections(!revealSelections)}
-          className='bg-gray flex flex-col items-stretch justify-center gap-1 rounded-xl p-5 shadow-md'
+          className='flex flex-col items-stretch justify-center gap-1 rounded-xl bg-gray p-5 shadow-md'
         >
           <div className='flex justify-between rounded-lg p-3 text-left'>
             <p>{Maps[selectedMapIdx].title}</p>

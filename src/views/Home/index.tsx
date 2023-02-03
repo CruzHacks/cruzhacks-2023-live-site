@@ -18,7 +18,9 @@ const Home: React.FC<HomeProps> = ({ announcements }) => {
         <h1 className='hidden gap-3 self-center py-10 text-4xl text-white md:flex lg:gap-5 lg:text-6xl'>
           <span className='flex gap-1'>
             CRUZHACKS
-            <span className='mt-1 text-xs font-thin lg:mt-0 lg:text-lg'>LIVE</span>
+            <span className='mt-1 text-xs font-thin lg:mt-0 lg:text-lg'>
+              LIVE
+            </span>
           </span>{" "}
           2023
         </h1>
