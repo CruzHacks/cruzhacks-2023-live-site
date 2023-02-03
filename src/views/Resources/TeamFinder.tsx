@@ -8,7 +8,7 @@ const TeamFinder: React.FC = () => {
       introTitle="Don't Have a Team Yet?"
       title='Find a Team to Join & Submit'
     >
-      <ol className='m-auto flex flex-col gap-5 font-nunito md:w-5/6'>
+      <ol className='font-nunito m-auto flex flex-col gap-5 md:w-5/6'>
         <li>
           1. Join our Slack channel{" "}
           <a
@@ -40,7 +40,7 @@ const TeamFinder: React.FC = () => {
       <div className='flex w-full flex-col items-stretch pt-5'>
         <Button
           text='Submit Team'
-          link='https://cruzhacks/myPortal/?ext=team'
+          link='https://cruzhacks.com/myPortal/?ext=team'
           type='full'
           override='w-full md:w-1/2 m-auto'
         />

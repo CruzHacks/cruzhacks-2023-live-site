@@ -23,6 +23,13 @@ export const workshopInfo = [
         startTime: "9:15 pm",
         endTime: "10:00 pm",
       },
+      {
+        title: "Getting Started with Lightship",
+        location: "Workshop A - Classroom 150",
+        hostedBy: "Niantic - Gilberto Lopez Zayas",
+        startTime: "10:00 pm",
+        endTime: "11:00 pm",
+      },
     ],
   },
   {
@@ -43,13 +50,6 @@ export const workshopInfo = [
         endTime: "10:00 am",
       },
       {
-        title: "Getting Started with Lightship",
-        location: "Workshop A - Classroom 150",
-        hostedBy: "Niantic -  Gilberto Lopez Zayas",
-        startTime: "10:00 am",
-        endTime: "11:00 am",
-      },
-      {
         title: "Intro to Figma",
         location: "Workshop B - Classroom 151",
         hostedBy: "DSC - Coen Adler, Arshad Mohammad, Anusha Pai",
@@ -62,13 +62,6 @@ export const workshopInfo = [
         hostedBy: "Niantic - Evie Powell",
         startTime: "11:00 am",
         endTime: "12:00 pm",
-      },
-      {
-        title: "MLH Snyk Capture the Flag Cyber Security Challenge",
-        location: "Workshop A - Classroom 150",
-        hostedBy: "MLH - Mansi",
-        startTime: "12:00 pm",
-        endTime: "1:00 pm",
       },
       {
         title: "MLH Bob Ross MS Paint",
@@ -104,6 +97,13 @@ export const workshopInfo = [
         hostedBy: "CruzHacks",
         startTime: "4:00 pm",
         endTime: "4:30 pm",
+      },
+      {
+        title: "MLH Snyk Capture the Flag Cyber Security Challenge",
+        location: "Workshop A - Classroom 151",
+        hostedBy: "MLH - Mansi",
+        startTime: "4:00 pm",
+        endTime: "5:00 pm",
       },
       {
         title: "Intro to UI",

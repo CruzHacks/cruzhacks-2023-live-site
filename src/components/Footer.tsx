@@ -86,14 +86,14 @@ const Footer: React.FC = () => {
         >
           <div className='flex flex-col gap-2 rounded-lg bg-white p-3 text-sm'>
             <button
-              className='rounded-lg p-1 hover:bg-gray'
+              className='hover:bg-gray rounded-lg p-1'
               onClick={() => setShowLogout(true)}
               onKeyDown={() => setShowLogout(true)}
             >
               {isAuthenticated ? "Log Out" : "Log In"}
             </button>
             <button
-              className='rounded-lg p-1 hover:bg-gray'
+              className='hover:bg-gray rounded-lg p-1'
               onClick={() => setShowSwitchAccount(true)}
               onKeyDown={() => setShowSwitchAccount(true)}
             >
@@ -120,7 +120,7 @@ const Footer: React.FC = () => {
       )}
 
       {/* Mobile Footer */}
-      <footer className='fixed bottom-0 z-50 flex w-screen items-center justify-evenly bg-white p-5 text-darkgray md:hidden'>
+      <footer className='text-darkgray fixed bottom-0 z-50 flex w-screen items-center justify-evenly bg-white p-5 md:hidden'>
         <FooterNav page={page} target='/map' title='Map' Icon={MapNavLogo} />
         <FooterNav
           page={page}
@@ -139,7 +139,7 @@ const Footer: React.FC = () => {
       </footer>
 
       {/* Desktop Footer */}
-      <footer className='hidden justify-between bg-navy p-5 px-8 text-white md:flex'>
+      <footer className='bg-navy hidden justify-between p-5 px-8 text-white md:flex'>
         {/* Quick Looks hidden on Medium Screen Size*/}
         <div className='hidden grow gap-3 lg:flex'>
           <a
