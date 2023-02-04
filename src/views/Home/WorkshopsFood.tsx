@@ -88,7 +88,7 @@ const WorkshopsFood: React.FC = () => {
         })}
       </div>
 
-      <ul className='flex h-60 flex-col gap-5 overflow-y-scroll'>
+      <ul className='h-100 flex flex-col gap-5 overflow-y-scroll'>
         <li className='text-darkgray'>{foodInfo[foodDay].date}</li>
         <li className='border-b-2 border-darkgray'></li>
 
