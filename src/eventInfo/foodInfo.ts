@@ -12,11 +12,15 @@ export const foodInfo = [
         title: "Dinner",
         items: [
           {
-            name: "Goyaki Yerba Mate",
-            dietary: [Dietary.Vegetarian],
+            name: "Panda Express",
+            dietary: [Dietary.Vegan, Dietary.GlutenFree],
           },
           {
             name: "Secret Snack",
+            dietary: [Dietary.Vegan],
+          },
+          {
+            name: "Goyaki Yerba Mate",
             dietary: [],
           },
         ],
@@ -47,11 +51,7 @@ export const foodInfo = [
         title: "Lunch",
         items: [
           {
-            name: "TBD",
-            dietary: [],
-          },
-          {
-            name: "TBD",
+            name: "Various Slices of Pizza",
             dietary: [],
           },
         ],
@@ -62,15 +62,15 @@ export const foodInfo = [
         title: "Dinner",
         items: [
           {
-            name: "TBD",
+            name: "Roasted Chicken and Swiss Roller Platter",
             dietary: [],
           },
           {
-            name: "TBD",
+            name: "Cheeseburgers",
             dietary: [],
           },
         ],
-        provider: "TBD",
+        provider: "Costco",
         time: "5:30 pm",
       },
     ],
@@ -97,12 +97,8 @@ export const foodInfo = [
         title: "Lunch",
         items: [
           {
-            name: "TBD",
-            dietary: [],
-          },
-          {
-            name: "TBD",
-            dietary: [],
+            name: "Various Sandwiches",
+            dietary: [Dietary.GlutenFree, Dietary.Vegan],
           },
         ],
         provider: "Ike's",
