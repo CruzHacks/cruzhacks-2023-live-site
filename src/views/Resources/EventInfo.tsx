@@ -7,25 +7,22 @@ const EventInfo: React.FC = () => {
       <div className='flex flex-col gap-5 md:gap-10 md:px-20'>
         <div className='flex flex-col gap-2'>
           <p className='font-bold'>WiFi</p>
-          <p>Use: UCSC_Guest</p>
-          <p>Pass: XSDSDVFB</p>
+          <p>UCSC_Guest</p>
         </div>
 
         <div className='flex flex-col gap-2'>
           <p className='font-bold'>Color Legend</p>
-          <p>Organizers: Green Shirt/Green Jackets</p>
-          <p>Mentors/Volunteers: Blue Shirt</p>
-          <p>Judges: Pink Shirt</p>
+          <p>Organizers: Black Shirt/Black Jackets</p>
+          <p>Mentors/Judges: Blue Shirt</p>
         </div>
 
         <div className='flex flex-col gap-2'>
           <p className='font-bold'>Slack</p>
           <p>Slack will be used for communication during the event.</p>
-          <p>Mentors/Volunteers: Blue Shirt</p>
           <p>
             Join our Slack{" "}
             <a
-              className='text-blue italic underline'
+              className='italic text-blue underline'
               href='https://www.google.com/url?q=https://join.slack.com/t/cruzhacks2023-7db8697/shared_invite/zt-1mqu9lds7-x6Lj7T126Bc2p1VkaZt05g&sa=D&source=editors&ust=1675319183050096&usg=AOvVaw1Fxo5ltmaqO1rdNPDcvCif'
             >
               here
