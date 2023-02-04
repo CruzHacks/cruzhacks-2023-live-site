@@ -93,14 +93,14 @@ export const workshopInfo = [
       },
       {
         title: "CruzHacks Organizer Interest Meeting",
-        location: "Workshop B - Classroom 151",
+        location: "Workshop C - Classroom 152",
         hostedBy: "CruzHacks",
         startTime: "4:00 pm",
         endTime: "4:30 pm",
       },
       {
         title: "MLH Snyk Capture the Flag Cyber Security Challenge",
-        location: "Workshop A - Classroom 151",
+        location: "Workshop B - Classroom 151",
         hostedBy: "MLH - Mansi",
         startTime: "4:00 pm",
         endTime: "5:00 pm",
