@@ -1,24 +1,30 @@
 import React, { useState } from "react"
 import BackgroundHeader from "../../components/BackgroundHeader"
 import StevensonOutside from "./StevensonOutside"
-import StevensonFloorPlan from "./StevensonFloorplan"
+import StevensonFloorPlan from "./StevensonJudgingMap"
 
 import DropdownLogo from "../../assets/logo_dropdown-triangle-gray.svg"
 import StevensonEastRemoteLot from "./StevensonEastRemoteLot"
+import StevensonJudgingMap from "./StevensonJudgingMap"
 
 const Maps = [
   {
     id: 0,
+    title: "Judging Map",
+    map: <StevensonJudgingMap />,
+  },
+  {
+    id: 1,
     title: "General Area - Stevenson College",
     map: <StevensonOutside />,
   },
   {
-    id: 1,
+    id: 2,
     title: "Stevenson Event Center Floorplan",
     map: <StevensonFloorPlan />,
   },
   {
-    id: 2,
+    id: 3,
     title: "East Remote Lot to Stevenson Event Center",
     map: <StevensonEastRemoteLot />,
   },
@@ -45,7 +51,7 @@ const Map: React.FC = () => {
         <button
           onClick={() => setRevealSelections(!revealSelections)}
           onKeyDown={() => setRevealSelections(!revealSelections)}
-          className='bg-gray flex flex-col items-stretch justify-center gap-1 rounded-xl p-5 shadow-md'
+          className='flex flex-col items-stretch justify-center gap-1 rounded-xl bg-gray p-5 shadow-md'
         >
           <div className='flex justify-between rounded-lg p-3 text-left'>
             <p>{Maps[selectedMapIdx].title}</p>
